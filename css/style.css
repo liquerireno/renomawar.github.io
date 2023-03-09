@@ -1,0 +1,168 @@
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			input {
+				margin: center;
+				padding: 12px;
+			}
+
+			table {
+				margin-top: center;
+				border-collapse: collapse;
+				width: center;
+				text-align: center;
+			}
+
+			th, td {
+				border: 1px solid black;
+				padding: center;
+			}
+
+			.total {
+				font-weight: bold;
+			}
+			
+			{
+			box-sizing: border-box;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			color: #333;
+		}
+			body {
+		background: linear-gradient(to bottom, #fcf5c7, #f2f2f2);  
+		margin: 0;
+	}
+	input[type="date"],
+	input[type="text"],
+	button {
+		padding: center;
+		border-radius: 50px;
+		border: none;
+		background: linear-gradient(to bottom, #ff86c0, #ff6978);
+		margin: center;
+		font-size: 1.0rem;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		width: 100%;
+		max-width: 400px;
+	}
+	input[type="date"]:focus,
+	input[type="text"]:focus,
+	button:focus {
+		outline: none;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	}
+	button {
+		background-color: #E31B6D;
+		color: #15062c ;
+		font-weight: 700;
+		cursor: default;
+		transition: all 0.3s ease;
+		max-width: 200px;
+	}
+	button:hover {
+		background-color: #ff5a93;
+	}
+	table {
+		margin-top: 20px;
+		border-collapse: collapse;
+		width: 95%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	th,
+	td {
+		border: 3px solid 	#fcfce3;
+		padding: 1px;
+		box-shadow: 1 0 3px rgba(0, 0, 0, 0.3);
+	}
+	th {
+		background-color: #ffb6c1;
+		font-weight: 700;
+	}
+	.total {
+		background: linear-gradient(to bottom, #ffffe0, #f0e68c);
+		font-weight: bold;
+	}
+	p {
+		font-size: 1rem;
+		margin: 0;
+		padding: 10px;
+		color: #666;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.btn-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+	.btn-container button {
+		margin-right: 20px;
+		background-color: #333;
+		color: #fff;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		max-width: 200px;
+	}
+	.btn-container button:hover {
+		background-color: #555;
+	}
+	/* ukuran standar */
+h1 {
+	font-size: 2rem;
+}
+
+/* ukuran pada layar dengan lebar minimum 768px */
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 3rem;
+	}
+}
+
+.form-group.text-center {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.blinking-button {
+  animation: blink 1s infinite;
+}
+
+.whatsapp-button {
+  background-color: green;
+  color: white;
+}
+
+.download-button {
+  background-color: blue;
+  color: white;
+}
+
+blink-black {
+    animation: blink 1s infinite;
+    color: black;
+}
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+.blink {
+animation: blinker 1s linear infinite;
+color: white;
+text-shadow: 0 0 1px black;
+}
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+
+			
+	
