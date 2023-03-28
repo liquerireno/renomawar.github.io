@@ -1,0 +1,419 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Laporan Keuangan</title>
+		<!-- Link ke Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- Link ke jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<!-- Link ke Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Link ke Bootstrap Datepicker CSS dan JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+		<style>
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			input {
+				margin: auto;
+				padding: 12px;
+				text-align: center;
+			}
+			
+
+			table {
+				margin-top: center;
+				border-collapse: collapse;
+				width: center;
+				text-align: center;
+			}
+
+			th, td {
+				border: 1px solid black;
+				padding: center;
+			}
+
+			.total {
+				font-weight: bold;
+			}
+			
+			{
+			box-sizing: border-box;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			color: #333;
+		}
+			body {
+		background: linear-gradient(to bottom, #fcf5c7, #f2f2f2);  
+		margin: 0;
+	}
+	input[type="date"],
+	input[type="text"],
+	button {
+		padding: center;
+		border-radius: 50px;
+		border: none;
+		background: linear-gradient(to bottom, #ff86c0, #ff6978);
+		margin: center;
+		font-size: 1.0rem;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		width: 100%;
+		max-width: 400px;
+	}
+	input[type="date"]:focus,
+	input[type="text"]:focus,
+	button:focus {
+		outline: none;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	}
+	button {
+		background-color: #E31B6D;
+		color: #15062c ;
+		font-weight: 700;
+		cursor: default;
+		transition: all 0.3s ease;
+		max-width: 200px;
+	}
+	button:hover {
+		background-color: #ff5a93;
+	}
+	table {
+		margin-top: 20px;
+		border-collapse: collapse;
+		width: 95%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	th,
+	td {
+		border: 3px solid 	#fcfce3;
+		padding: 1px;
+		box-shadow: 1 0 3px rgba(0, 0, 0, 0.3);
+	}
+	th {
+		background-color: #ffb6c1;
+		font-weight: 700;
+	}
+	.total {
+		background: linear-gradient(to bottom, #ffffe0, #f0e68c);
+		font-weight: bold;
+	}
+	p {
+		font-size: 1rem;
+		margin: 0;
+		padding: 10px;
+		color: #666;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.btn-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+	.btn-container button {
+		margin-right: 20px;
+		background-color: #333;
+		color: #fff;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		max-width: 200px;
+	}
+	.btn-container button:hover {
+		background-color: #555;
+	}
+	/* ukuran standar */
+h1 {
+	font-size: 2rem;
+}
+
+/* ukuran pada layar dengan lebar minimum 768px */
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 3rem;
+	}
+}
+
+.form-group.text-center {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.blinking-button {
+  animation: blink 1s infinite;
+}
+
+.whatsapp-button {
+  background-color: green;
+  color: white;
+}
+
+.download-button {
+  background-color: blue;
+  color: white;
+}
+
+blink-black {
+    animation: blink 1s infinite;
+    color: black;
+}
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+.blink {
+animation: blinker 1s linear infinite;
+color: white;
+text-shadow: 0 0 1px black;
+}
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+
+			
+		</style>
+	</head>
+	<body>
+		<form>
+	<div class="form-group text-center">
+		<label for="tanggal">Tanggal:</label>
+		<input type="text" class="form-control" id="tanggal" name="tanggal">
+	</div>
+	
+	<div class="form-group">
+		<label for="deskripsi">Deskripsi Belanja:</label>
+		<div class="input-group">
+			<input type="text" id="deskripsi" name="deskripsi" class="form-control">
+			<div class="input-group-append">
+				<button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
+  			<i class="fa fa-times-circle" aria-hidden="true"></i>
+  			<span class="ml-2">Hapus</span>
+			</button>
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+  <label for="harga">Harga:</label>
+  <div class="input-group">
+    <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <span class="ml-2">Hapus</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+	
+	<div class="form-group text-center">
+		<button type="button" class="btn btn-primary whatsapp-button" button type="button" onclick="tambah()">Tambahkan Belanja</button>
+	</div>
+</form>
+		<table id="tabel-belanja">
+			<thead>
+				<tr>
+					<th>Tanggal</th>
+					<th>Deskripsi Belanja</th>
+					<th>Harga</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="total">Total:</td>
+					<td id="total-harga" class="total">0</td>
+					<td></td>
+				</tr>
+			</tfoot>
+			
+		</table>
+		<br>
+		<br><center>
+	<b>Catatan:</b><em>"ndak wajib download file nya yang, ini untuk kirim catatan otomatis ke wa sayang sendiri ---------- !!"</em>
+	<td>
+	<button type="button" class="btn btn-primary whatsapp-button" button onclick="download()">Download</button>
+	<button type="button" class="btn btn-primary whatsapp-button" button onclick="kirimWhatsApp()" class="blink-black">Kirim WhatsApp</button>
+
+
+	<script>
+		
+		let belanjaan = [];
+
+// Function untuk mengubah format angka menjadi format ribuan
+function formatNumber(input) {
+  var num = input.value.replace(/\./g,'');
+  if (!isNaN(num)) {
+    num = Number(num).toLocaleString('id-ID');
+    input.value = num;
+  } else {
+    alert('Mohon masukkan angka saja');
+    input.value = input.value.replace(/[^\d\.]*/g,'');
+  }
+}
+
+
+function tambah() {
+  let tanggal = document.getElementById('tanggal').value;
+  let deskripsi = document.getElementById('deskripsi').value;
+  let harga = parseInt(document.getElementById('harga').value.replaceAll(".", ""));
+  if (tanggal && deskripsi && harga) {
+    belanjaan.push({
+      tanggal: tanggal,
+      deskripsi: deskripsi,
+      harga: harga
+    });
+    tampilkanTabelBelanja();
+    document.getElementById('tanggal').value = '';
+    document.getElementById('deskripsi').value = '';
+    document.getElementById('harga').value = '';
+  } else {
+    alert('Sayang isi dulu yang lengkap {-_-}');
+  }
+}
+
+function clearDeskripsi() {
+		document.getElementById("deskripsi").value = "";
+	}
+	
+	function clearHarga() {
+		document.getElementById("harga").value = "";
+	}
+
+function hapus(index) {
+  belanjaan.splice(index, 1);
+  tampilkanTabelBelanja();
+}
+
+// Function untuk menampilkan tabel belanjaan
+function tampilkanTabelBelanja() {
+  let tabelBelanja = document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0];
+  let totalHarga = 0;
+  tabelBelanja.innerHTML = '';
+  belanjaan.forEach((belanja, index) => {
+    let row = tabelBelanja.insertRow();
+    let tanggalCell = row.insertCell(0);
+    let deskripsiCell = row.insertCell(1);
+    let hargaCell = row.insertCell(2);
+    let aksiCell = row.insertCell(3);
+    
+    let tanggalArray = belanja.tanggal.split('-');
+    let tanggalText = '';
+    if (tanggalArray.length === 3) {
+      tanggalText = document.createTextNode(`${tanggalArray[2]}-${tanggalArray[1]}-${tanggalArray[0]}`);
+    } else {
+      tanggalText = document.createTextNode(belanja.tanggal);
+    }
+    
+    let deskripsiText = document.createTextNode(belanja.deskripsi);
+    let hargaText = document.createTextNode(belanja.harga.toLocaleString());
+    let aksiBtn = document.createElement('button');
+    let aksiText = document.createTextNode('Hapus');
+    aksiBtn.appendChild(aksiText);
+    aksiBtn.setAttribute('onclick', 'hapus(' + index + ')');
+    tanggalCell.appendChild(tanggalText);
+    deskripsiCell.appendChild(deskripsiText);
+    hargaCell.appendChild(hargaText);
+    aksiCell.appendChild(aksiBtn);
+    totalHarga += belanja.harga;
+  });
+  let totalHargaElem = document.getElementById('total-harga');
+  totalHargaElem.innerHTML = totalHarga.toLocaleString();
+
+  let downloadBtn = document.getElementById('download');
+  downloadBtn.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(belanjaan)));
+  downloadBtn.setAttribute('download', 'belanjaan.txt');
+}
+
+
+
+function download() {
+  let rows = [];
+  let headers = ["Tanggal", "Deskripsi Belanja", "Harga"];
+  rows.push(headers);
+  belanjaan.forEach((belanja) => {
+    // Format tanggal menjadi format Indonesia
+    let formattedDate = new Date(belanja.tanggal).toLocaleDateString("id-ID", { day: "numeric", month: "numeric", year: "numeric" });
+    let row = [formattedDate, belanja.deskripsi, belanja.harga];
+    rows.push(row);
+  });
+  let csvContent = "data:text/csv;charset=utf-8,"
+                   + rows.map(e => e.join(",")).join("\n");
+
+  let encodedUri = encodeURI(csvContent);
+  let link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "lap Mawar.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+
+function kirimWhatsApp() {
+  let nomorUrut = 1;
+  let text = "Catatan Belanjaan:\n";
+  let tabelBelanja = document.getElementById("tabel-belanja");
+  let rowLength = tabelBelanja.rows.length;
+  for (let i = 1; i < rowLength - 1; i++) {
+    let tanggal = tabelBelanja.rows[i].cells[0].innerHTML;
+    let deskripsi = tabelBelanja.rows[i].cells[1].innerHTML;
+    let harga = tabelBelanja.rows[i].cells[2].innerHTML;
+    text += `${nomorUrut}. ${tanggal} - ${deskripsi} - ${harga}\n`;
+    nomorUrut++;
+  }
+  let encodedText = encodeURIComponent(text);
+  let phoneNumber = "6285247502344";
+  let link = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedText}`;
+
+  window.open(link, "_blank");
+}
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+  $('#tanggal').datepicker({
+    format: 'dd/mm/yyyy', // format tanggal yang diinginkan
+    autoclose: true, // kalender akan tertutup setelah memilih tanggal
+    todayHighlight: true // menyoroti tanggal hari ini
+  });
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+		
+	</script>
+	</body>
+	</html>
