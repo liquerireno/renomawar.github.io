@@ -15,8 +15,13 @@
 
     <style>
     
-    body {
+        /* CSS utama Anda */
+      body {
+        font-family: sans-serif;
         font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        background-color: #fff;
       }
       
       /* Gaya-gaya untuk layar dengan lebar maksimum 600px */
@@ -47,19 +52,6 @@
     no-repeat center / cover;
 }
 
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-banner {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-banner {
-          font-size: 12px;
-        }
-      }
-
 .top-banner-overlay {
   display: grid;
   flex-direction: column;
@@ -70,34 +62,10 @@
   color: var(--white);
  
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-banner-overlay {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-banner-overlay {
-          font-size: 12px;
-        }
-      }
 
 .top-banner-overlay.is-moved {
   transform: translateX(350px);
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-banner-overlay.is-moved {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-banner-overlay.is-moved {
-          font-size: 12px;
-        }
-      }
 
 .top-banner-overlay.is-moved::before {
   content: "";
@@ -108,18 +76,6 @@
   width: 100px;
   box-shadow: 3px 0 10px rgba(0, 0, 0, .75);
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-banner-overlay.is-moved::before {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-banner-overlay.is-moved::before {
-          font-size: 12px;
-        }
-      }
 
 .top-banner-overlay p {
   margin-top: 1px;
@@ -142,106 +98,36 @@
   transition: transform 0.7s;
   background: var(--menu-color);
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper {
-          font-size: 12px;
-        }
-      }
 
 .top-nav .menu-wrapper.is-opened {
   transform: translateX(150px);
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper.is-opened {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper.is-opened {
-          font-size: 12px;
-        }
-      }
 
 .top-nav .menu-wrapper .menu {
   opacity: 0;
   transition: opacity 0.4s;
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper .menu {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper .menu{
-          font-size: 12px;
-        }
-      }
 
 .top-nav .menu-wrapper.is-opened .menu {
   opacity: 1;
   transition-delay: 0.6s;
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper.is-opened .menu {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper.is-opened .menu {
-          font-size: 12px;
-        }
-      }
 
 .top-nav .menu-wrapper .menu a {
-  font-size: 16px;
+  font-size: 1.0rem;
 }
-
 
 .top-nav .menu-wrapper .sub-menu {
   padding: 10px 0 0 7px;
 }
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper .sub-menu {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper.sub-menu {
-          font-size: 12px;
-        }
-      }
 
 .top-nav .menu-wrapper .menu-close {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 16px;
+  font-size: 2rem;
 }
-@media only screen and (max-width: 600px) {
-        .top-nav .menu-wrapper .menu-close {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .menu-wrapper .menu-close {
-          font-size: 12px;
-        }
-      }
+
 /* FIXED MENU RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -256,40 +142,21 @@
   padding: 10px;
   background:#FFB6C1;
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .fixed-menu {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .fixed-menu {
-          font-size: 12px;
-        }
-      }
 
 .top-nav .fixed-menu .menu-toggle {
-  font-size: 16px;
+  font-size: 2rem;
   text-align: left;
   margin: 30px 0 auto;
   width: 28px;
 }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-nav .fixed-menu .menu-toggle {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-nav .fixed-menu .menu-toggle {
-          font-size: 12px;
-        }
-      }
 
 /* MQ STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width: 900px) {
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
 
   .top-banner {
     top: 50px;
@@ -299,18 +166,7 @@
     transform: none;
     align-items: center;
   }
-/* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-@media only screen and (max-width: 600px) {
-        .top-banner {
-          font-size: 14px;
-        }
-      }
-/* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-@media only screen and (max-width: 400px) {
-        .top-banner {
-          font-size: 12px;
-        }
-      }
+
   .top-banner-overlay {
     position: relative; /*2*/
     left: 0; /*2*/
@@ -397,7 +253,7 @@
   position: center;
   top: 50%;
   left: 0;
-  font-size: 16px;
+  font-size: 25px;
   color: rgb(0, 0, 0);
   transform: translateY(-1%);
   transition: all 0.2s ease-in-out;
@@ -423,7 +279,7 @@
 .form-control:focus + label,
 .form-control:valid + label {
   top: -24px;
-  font-size: 16px;
+  font-size: 10px;
   color: #007bff;
 }
 
@@ -437,7 +293,7 @@
 /* kotak form
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1 {
-font-size: 16px;
+font-size: 48px;
 font-weight: bold;
 text-align: center;
 font-family: "Great Vibes", cursive;;
@@ -471,7 +327,7 @@ transform: scale(1);
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 2px 2px #000;
@@ -591,7 +447,7 @@ body {
 }
 
 #tabel-belanja tfoot td#total-harga {
-  font-size: 16px;
+  font-size: 24px;
 }
 
 #tabel-belanja td a {
