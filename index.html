@@ -15,31 +15,74 @@
 
     <style>
     
-        /* CSS utama Anda */
-            body {
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-      color: #333;
-      background-color: #fff;
-      max-width: 100%;
-      overflow-x: hidden;
+    body {
+font-family: sans-serif;
+font-size: 16px;
+line-height: 1.5;
+color: #333;
+background-color: #fff;
+max-width: 100%;
+overflow-x: hidden;
+}
+  /* Gaya-gaya untuk layar dengan lebar maksimum 600px */
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 14px;
     }
 
-      
-      /* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-      @media only screen and (max-width: 600px) {
-        body {
-          font-size: 14px;
-        }
-      }
-      
-      /* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-      @media only screen and (max-width: 400px) {
-        body {
-          font-size: 12px;
-        }
-      }
+    .top-banner-overlay {
+      width: 90%;
+    }
+
+    .top-nav .menu-wrapper {
+      width: 100%;
+      transform: translateX(-100%);
+      padding-top: 70px;
+    }
+
+    .top-nav .menu-wrapper.is-opened {
+      transform: none;
+    }
+
+    .top-nav .menu-wrapper .menu-close {
+      top: 70px;
+    }
+
+    .top-nav .fixed-menu {
+      bottom: auto;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+    }
+
+    .top-nav .fixed-menu .menu-toggle {
+      margin: 0;
+      order: 3;
+    }
+
+    .top-nav .socials {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .top-nav .socials li {
+      margin-right: 15px;
+    }
+
+    .top-nav .socials li + li {
+      margin-left: 15px;
+    }
+  }
+  
+  /* Gaya-gaya untuk layar dengan lebar maksimum 400px */
+  @media only screen and (max-width: 400px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
 
 /* TOP BANNER RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
