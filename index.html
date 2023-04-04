@@ -15,7 +15,23 @@
 
     <style>
     
-   
+    body {
+        font-size: 16px;
+      }
+      
+      /* Gaya-gaya untuk layar dengan lebar maksimum 600px */
+      @media only screen and (max-width: 600px) {
+        body {
+          font-size: 14px;
+        }
+      }
+      
+      /* Gaya-gaya untuk layar dengan lebar maksimum 400px */
+      @media only screen and (max-width: 400px) {
+        body {
+          font-size: 12px;
+        }
+      }
 
 /* TOP BANNER RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -131,11 +147,6 @@
 
 /* MQ STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media (max-width: 900px) {
-  body {
-    font-size: 16px;
-    overflow-x: hidden;
-  }
 
   .top-banner {
     top: 50px;
