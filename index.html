@@ -1,704 +1,833 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<title>Laporan Keuangan Reno & Mawar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    
-
-    <style>
-    
-    body {
-font-family: sans-serif;
-font-size: 16px;
-line-height: 1.5;
-color: #333;
-background-color: #fff;
-max-width: 100%;
-overflow-x: hidden;
-}
-  /* Gaya-gaya untuk layar dengan lebar maksimum 600px */
-  @media only screen and (max-width: 600px) {
-    body {
-      font-size: 14px;
-    }
-
-    .top-banner-overlay {
-      width: 90%;
-    }
-
-    .top-nav .menu-wrapper {
-      width: 100%;
-      transform: translateX(-100%);
-      padding-top: 70px;
-    }
-
-    .top-nav .menu-wrapper.is-opened {
-      transform: none;
-    }
-
-    .top-nav .menu-wrapper .menu-close {
-      top: 70px;
-    }
-
-    .top-nav .fixed-menu {
-      bottom: auto;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      height: 50px;
-      padding: 0 20px;
-    }
-
-    .top-nav .fixed-menu .menu-toggle {
-      margin: 0;
-      order: 3;
-    }
-
-    .top-nav .socials {
-      display: flex;
-      margin-left: auto;
-    }
-
-    .top-nav .socials li {
-      margin-right: 15px;
-    }
-
-    .top-nav .socials li + li {
-      margin-left: 15px;
-    }
-  }
-  
-  /* Gaya-gaya untuk layar dengan lebar maksimum 400px */
-  @media only screen and (max-width: 400px) {
-    body {
-      font-size: 12px;
-    }
-  }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-bJe1X9Bn5f5P5n42R5/hIMyyzif0fctJfhNN0GFDKvZC9XQJAL0e0ws3qRW1lH01DW7xuOZk8M7VNM+ZtX/fXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-/* TOP BANNER RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ <!-- Masukkan library jQuery -->
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
-
-.top-banner {
-  position: relative;
-  left: 220px;
-  display: grid;
-  width: calc(100% - 150px);
-  height: 100vh;
-  
-    no-repeat center / cover;
-}
-
-.top-banner-overlay {
-  display: grid;
-  flex-direction: column;
-  justify-content: center;
-  width: 543px;
-  padding: 25px;
-  transition: all 0.7s;
-  color: var(--white);
  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-7VlJUnZKEzl7lX9pCKxsnhVq3qGnFN7zNPSp0lv+BDNvCmnkY0NimXHbI/2+GMzj" crossorigin="anonymous">
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-Q8i/X4+l1giA4w6oZU6YYidUex/F5S6zoFJ5v5pWc5L6BfNmIurH1CvPg3GnfrF9" crossorigin="anonymous"></script>
+
+
+
+<!--khusus kalender-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Load FullCalendar CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css" rel="stylesheet" media="print" />
+ <!-- Load FullCalendar JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+<!--Khusus kalender-->
+
+<style>
+html,body,h1,h2,h3,h4 {
+font-family:"Lato", sans-serif;
+background:radial-gradient(ellipse at center, rgb(255, 253, 208) 0%, rgb(255, 245, 238) 35%, #FFF5EE 100%);
 }
-
-.top-banner-overlay.is-moved {
-  transform: translateX(350px);
-}
-
-.top-banner-overlay.is-moved::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  width: 100px;
-  box-shadow: 3px 0 10px rgba(0, 0, 0, .75);
-}
-
-.top-banner-overlay p {
-  margin-top: 1px;
-}
-
-.top-nav li + li {
-  margin-top: 10px;
-}
-
-/* MENU WRAPPER RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.top-nav .menu-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 350px;
-  padding: 20px;
-  transform: translateX(-1000px);
-  transition: transform 0.7s;
-  background: var(--menu-color);
-}
-
-.top-nav .menu-wrapper.is-opened {
-  transform: translateX(150px);
-}
-
-.top-nav .menu-wrapper .menu {
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.top-nav .menu-wrapper.is-opened .menu {
-  opacity: 1;
-  transition-delay: 0.6s;
-}
-
-.top-nav .menu-wrapper .menu a {
-  font-size: 1.0rem;
-}
-
-.top-nav .menu-wrapper .sub-menu {
-  padding: 10px 0 0 7px;
-}
-
-.top-nav .menu-wrapper .menu-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-}
-
-/* FIXED MENU RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.top-nav .fixed-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  width: 164px;
-  padding: 10px;
-  background:#FFB6C1;
-}
-
-.top-nav .fixed-menu .menu-toggle {
-  font-size: 2rem;
-  text-align: left;
-  margin: 30px 0 auto;
-  width: 28px;
-}
-
-/* MQ STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media (max-width: 900px) {
-  body {
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-
-  .top-banner {
-    top: 50px;
-    left: auto;
-    width: 100%;
-    height: calc(100vh - 50px);
-    transform: none;
-    align-items: center;
-  }
-
-  .top-banner-overlay {
-    position: relative; /*2*/
-    left: 0; /*2*/
-    max-width: 100%;
-  }
-
-  .top-banner-overlay.is-moved {
-    left: 100%; /*2*/
-    transform: none;
-  }
-
-  .top-nav .menu-wrapper {
-    width: 100%;
-    transform: translateX(-100%);
-    padding-top: 70px;
-  }
-
-  .top-nav .menu-wrapper.is-opened {
-    transform: none;
-  }
-
-  .top-nav .menu-wrapper .menu-close {
-    top: 70px;
-  }
-
-  .top-nav .fixed-menu {
-    bottom: auto;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
-  }
-
-  .top-nav .fixed-menu .menu-toggle {
-    margin: 0;
-    order: 3;
-  }
-
-  .top-nav .socials {
-    display: flex;
-    margin-left: auto;
-  }
-
-  .top-nav .socials li {
-    margin-right: 15px;
-  }
-
-  .top-nav .socials li + li {
-    margin-top: 0;
-  }
-}
-
-/* FOOTER STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-footer {
-  position: fixed;
-  right: 0;
-  bottom: 50px;
-  display: flex;
-  align-items: center;
+.mySlides {
+  display: none;
+  border: 2px dashed #000;
   padding: 5px;
-  z-index: 1;
-  font-size: 16px;
-  background: var(--white);
 }
 
-.page-footer a {
+.w3-tag, .fa {
+cursor:pointer
+}
+
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+<!-- menbuat tampilan pada tanggal -->
+/* Atur tinggi kalender */
+.fc {
+  height: auto;
+}
+
+/* Atur warna latar belakang header */
+.fc-header {
+  background-color: #f2f2f2;
+}
+
+/* Atur ukuran font pada header kalender */
+.fc-toolbar {
   display: flex;
-  margin-left: 4px;
-}
-/* FOOTER STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* kotak form
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.form-group {
-  position: relative;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.form-group label {
-  position: center;
-  top: 50%;
-  left: 0;
-  font-size: 25px;
-  color: rgb(0, 0, 0);
-  transform: translateY(-1%);
-  transition: all 0.2s ease-in-out;
-}
-
-.form-control {
-  padding: 16px;
-  border: none;
-  background-color: transparent;
-  font-size: 15px;
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgb(255, 0, 0), 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-  text-align: center; /* menengahkan teks input */
-}
-
-.form-control:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px #80ee19, 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.form-control:focus + label,
-.form-control:valid + label {
-  top: -24px;
-  font-size: 10px;
-  color: #007bff;
-}
-
-.form-control:focus + label {
-  color: #007bff;
-}
-/* kotak form
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-/* kotak form
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1 {
-font-size: 48px;
-font-weight: bold;
-text-align: center;
-font-family: "Great Vibes", cursive;;
-color: #ff69b4;
-text-shadow: 2px 2px #000;
-font-style: italic;
-letter-spacing: 2px;
-}
-
-@keyframes heartbeat {
-0% {
-transform: scale(1);
-}
-25% {
-transform: scale(0.9);
-}
-50% {
-transform: scale(1);
-}
-75% {
-transform: scale(1.1);
-}
-100% {
-transform: scale(1);
-}
-}
-
-.button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 2px 2px #000;
-  transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-  background-color: #fff;
-  color: #ff0000;
-  box-shadow: 4px 4px #000;
-}
-
-
-/* edit anjing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* –––––––––––––––––––––––––––––––––––––––––––––––––– */
-      /* Support for CSS `d` property is required. */
-
-
-
-   /* –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-	/* RESET RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-
-:root {
-  --white: white;
-  --black: black;
-  --menu-color: #b1ffe5;
-  --fixed-menu-color: aquamarine;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-button:active {
-  color: var(--black);
-}
-
-a {
-  text-decoration: none;
-  color: var(--black);
-}
-
-body {
-  font: normal 18px/1.5 "Ubuntu", sans-serif;
-}
-
-.no-transition * {
-  transition: none !important;
-}
-/* edit anjing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-
-/* edit table
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-#tabel-belanja {
-  font-family: 'Roboto', sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  color: #fff;
-  background-color: #1d1d1d;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-}
-
-#tabel-belanja th,
-#tabel-belanja td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-#tabel-belanja th {
-  background-color: #333;
-  color: #fff;
-  font-weight: bold;
-}
-
-#tabel-belanja td:nth-child(even) {
-  background-color: #2d2d2d;
-}
-
-#tabel-belanja .total {
-  font-weight: bold;
-  background-color: #333;
-  color: #fff;
-}
-
-#tabel-belanja tfoot tr {
-  background-color: #2d2d2d;
-}
-
-#tabel-belanja tfoot tr:hover {
-  background-color: #222;
-}
-
-#tabel-belanja tfoot td {
-  padding: 12px;
-  text-align: right;
-}
-
-#tabel-belanja tfoot td#total-harga {
-  font-size: 24px;
-}
-
-#tabel-belanja td a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#tabel-belanja td a:hover {
-  color: #ddd;
-}
-
-#tabel-belanja .aksi {
-  display: flex;
-  justify-content: space-between;
+  justify-content: right; /* atur posisi ke tengah */
   align-items: center;
 }
 
-#tabel-belanja .aksi a {
-  margin-right: 8px;
-  padding: 8px;
-  border-radius: 4px;
+.fc-toolbar h2 {
+  font-size: auto;
+  margin: 0; /* hapus margin bawaan */
+}
+
+
+/* Atur ukuran font pada nama hari */
+.fc-day-header {
+  font-size: auto;
+  text-transform: capitalize;
+}
+
+/* Atur ukuran font pada tanggal */
+.fc-day-number {
+  font-size: auto;
+  font-weight: bold;
+}
+
+/* Atur warna latar belakang tanggal pada saat dihover */
+.fc-day:hover {
+  background-color: #f0938c
+}
+
+/* Atur warna latar belakang pada tanggal yang dipilih */
+.fc-day.fc-state-highlight {
+  background-color: #ffcc00 !important;
+}
+
+/* Atur warna latar belakang pada tanggal yang dipilih dengan mouse */
+.fc-day.fc-state-down {
+  background-color: #000000 !important;
+}
+
+/* Atur teks nama hari dalam Bahasa Indonesia */
+.fc-day-header {
   text-transform: uppercase;
   font-weight: bold;
+  color: #000000;
+  padding: auto;
+  transition: all 0.3s ease-in-out;
 }
 
-#tabel-belanja .aksi a:hover {
-  opacity: 0.8;
+.fc-day-header:hover {
+  color: #FF0000;
+  transform: rotate(360deg);
 }
 
-#tabel-belanja .aksi .edit {
-  background-color: #4caf50;
-}
 
-#tabel-belanja .aksi .hapus {
+.fc-day-header.fc-sun {
   background-color: #f44336;
 }
 
-
-
-/* edit table
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px;
+.fc-day-header.fc-mon {
+  background-color: #2196f3;
 }
 
-.item {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
+.fc-day-header.fc-tue {
+  background-color: #2196f3;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
+.fc-day-header.fc-wed {
+  background-color: #2196f3;
+}
+
+.fc-day-header.fc-thu {
+  background-color: #2196f3;
+}
+
+.fc-day-header.fc-fri {
+  background-color: #2196f3;
+}
+
+.fc-day-header.fc-sat {
+  background-color: #9c27b0;
+}
+
+
+/* Animasi saat dihover pada tanggal */
+.fc-day {
+  transition: all 0.2s ease;
+}
+
+.fc-day:hover {
+  transform: scale(1.2);
+}
+
+/* Animasi saat tanggal dipilih */
+.fc-day.fc-state-highlight {
+  animation: pulse 0.5s;
+}
+
+/* Keyframe untuk animasi */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
+/* Border pada tanggal hari ini */
+.fc-day.fc-today {
+  border: 1px dashed #ff1493;
+}
+
+.fc-toolbar h2 {
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: auto;
+  text-shadow: 1px 1px #d9d9d9;
+}
+
+
+.fc-button-group .fc-button {
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
+}
+
+.fc-button-group button:hover {
+  background-color: #0062cc;
+}
+
+.fc-day-number {
+  color: #301934;
+  font-family: cursive;
+}
+
+.fc-today {
+  background-color: #f0f0f0;
+  border: 1px solid #007bff;
+}
+
+.fc-day-header {
+  background-color: #f0f0f0;
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.fc-event {
+  background-color: #FAFA33;
+  border-color: #007bff;
+  font-style: normal;
+  font-family: cursive;
+  color: #000000;
+  font-size: auto;
+  position: relative;
+  animation: bounce 9.0s infinite alternate;  
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(-20px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.fc-event-title {
+  color: rgb(0, 0, 0);
+}
+
+
+<!-- membuat tampilan tanggal, deskripsi belanja, harga dan tambahkan belanja -->
+/* font futuristik */
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
+body {
+  font-family: 'Quantico', sans-serif;
+}
+
+/* warna futuristik */
+:root {
+  --primary-color: #E37383;
+  --secondary-color: #F0EFF4;
+  --danger-color: #FF6262;
+}
+
+/* auto-sizing input */
+.input-group input[type=text], .input-group input[type=number] {
+  width: auto;
+  flex: 1 1 auto;
+  background-color:#FFC0CB;
+  color: rgb(0, 0, 0);
+  border: 1px solid #4d4d4d;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  padding: auto;
+  font-size: auto;
+}
+
+.input-group input[type=text]:focus, 
+.input-group input[type=number]:focus {
+  outline: none;
+}
+
+.input-group input[type=text]:focus:not(:placeholder-shown),
+.input-group input[type=number]:focus:not(:placeholder-shown) {
+  width: auto;
+  background-color: #E37383;
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.input-group input[type=text]:not(:focus):not(:placeholder-shown),
+.input-group input[type=number]:not(:focus):not(:placeholder-shown) {
+  width: auto;
+  background-color: #FFC0CB;
+  color: #fff;
+  border-color: #000000;
+}
+
+.input-group input[type=text]:not(:focus):not(:placeholder-shown)::placeholder,
+.input-group input[type=number]:not(:focus):not(:placeholder-shown)::placeholder {
+  color: #999;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.input-group input[type=text]:focus:not(:placeholder-shown)::placeholder,
+.input-group input[type=number]:focus:not(:placeholder-shown)::placeholder {
+  color: #ccc;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.input-group input[type=text]:focus:not(:placeholder-shown):not(:invalid),
+.input-group input[type=number]:focus:not(:placeholder-shown):not(:invalid) {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-5px);
+  }
+  
+  20%, 80% {
+    transform: translateX(5px);
+  }
+
+  30%, 50%, 70% {
+    transform: translateX(-2px);
+  }
+  
+  40%, 60% {
+    transform: translateX(2px);
+  }
+}
+
+/* tombol hapus */
+.input-group {
+  display: flex;
+  align-items: center;
+  width: auto;
+  max-width: auto;
+ 
+  margin: 0 auto;
+}
+
+.input-group input[type=text] {
+  width: auto;
+  flex: 1 1 auto;
+  background-color: #FFC0CB;
+  color: rgb(0, 0, 0);
+  border: 1px solid #4d4d4d;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  padding: 15px;
+  font-size: auto;
+}
+
+.input-group input[type=text]:focus {
+  outline: none;
+}
+
+.input-group input[type=text]:not(:focus):not(:placeholder-shown) {
+  width: auto;
+  background-color: #FFC0CB;
+  color: rgb(0, 0, 0);
+  border-color: #4d4d4d;
+}
+
+.input-group input[type=text]:not(:focus):not(:placeholder-shown)::placeholder {
+  color: #999;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.input-group input[type=text]:focus:not(:placeholder-shown)::placeholder {
+  color: #ccc;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.input-group .btn {
+  height: calc(1.5em + 0.5rem + 2px);
+  line-height: 1.0;
+  background-color: #E37383;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-left: -40px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.input-group:hover .btn {
+  margin-left: 0px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.input-group .btn:hover {
+  background-color: #FF4433;
+}
+
+.input-group .btn:focus {
+  outline: none;
+}
+
+.input-group .btn i {
+  margin-right: 5px;
+}
+
+.input-group .btn:active {
+  transform: translateY(1px);
+}
+
+.input-group .btn .fa-times-circle {
+  color: #fff;
+}
+
+.input-group .btn .fa-times-circle:hover {
+  color: #fff;
+}
+
+
+/* tombol tambahkan belanja */
+.whatsapp-button {
+  --primary-color: #FF2400;
+  --secondary-color: #075E54;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+  --shadow-color: rgba(60,194,226,.5);
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+}
+
+.whatsapp-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.whatsapp-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--secondary-color), 0 0 0 6px var(--shadow-color);
+}
+
+.whatsapp-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform var(--transition-speed) ease;
+}
+
+.whatsapp-button:hover::before {
+  transform: scale(4);
+}
+
+.whatsapp-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform var(--transition-speed) ease;
+}
+
+.whatsapp-button:hover::after {
+  transform: scale(6);
+  opacity: 0;
+}
+
+.whatsapp-button span {
+  position: relative;
+  z-index: 2;
+  transition: color var(--transition-speed) ease;
+  margin-right: 10px;
+}
+
+.whatsapp-button i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.whatsapp-button:hover span {
+  color: var(--primary-color);
+}
 
 
 
+/* styling untuk label */
+label {
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, cursive;
+  font-size: 1.5em;
+  text-align: center;
+  }
+
+/* styling untuk container kalender */
+#kalender-container {
+  border: 2px solid #4d4d4d;
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #F3CFC6 100%);
+  color: rgb(0, 0, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: auto;
+  padding: auto;
+  margin-bottom: auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#kalender-container:hover {
+  transform: auto;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
 
 
+/* styling untuk kontainer form-group */
+.form-group {
+  margin-bottom: 1rem;
+}
+<!-- membuat tampilan tanggal, deskripsi belanja, harga dan tambahkan belanja -->
 
-      
-    </style>
-  </head>
-  <body>
+<!--tampilan tabel belanja -->
+#tabel-belanja {
+  background: linear-gradient(to right, #2980b9, #2c3e50);
+  padding: 0;
+  border-radius: auto;
+  border: none;
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+  width: 100%;
+  height: 100%;
+}
 
-   
+#tabel-belanja thead tr {
+  background-color: #fff;
+  color: #502c2c;
+  text-align: left;
+  border-radius: 10px 10px 0 0;
+}
 
-   
-    <section class="top-banner">
-      <div class="top-banner-overlay">
-        <h1>Diary Keuangan</h1>
-        <br>
-         <p>
-          <div class="form-group">
-            <label for="tanggal">Tanggal:</label>
-            <input type="date" id="tanggal" name="tanggal">
-          </div>
-          </p>
+#tabel-belanja thead th {
+  padding: auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #F3E5AB, #FAD5A5, #F5F5DC);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  
+}
 
-          
-            <div style="display:flex; justify-content:flex-end;">
-              <div class="form-group" style="margin-left:10px;">
-                <label for="harga">Harga</label>
-                <div class="input-group">
-                  <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
-                      <i class="fa fa-times-circle" aria-hidden="true"></i>
-                      <span class="ml-2">Hapus</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
 
-              
-              
-              <div class="form-group" style="margin-left:10px;">
-                <label for="deskripsi">Deskripsi Belanja</label>
-                <div class="input-group">
-                  <input type="text" id="deskripsi" name="deskripsi" class="form-control">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
-                      <i class="fa fa-times-circle" aria-hidden="true"></i>
-                      <span class="ml-2">Hapus</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="form-group text-center">
-              <button type="button" class="btn btn-primary whatsapp-button" button type="button" onclick="tambah()">Tambahkan Belanja</button>
-            </div>
+#tabel-belanja tbody td {
+  padding: auto;
+  color: #2c3e50;
+  border-bottom: 1px dashed #2c3e50;
+}
 
-            <table id="tabel-belanja">
-              <thead>
-                <tr>
-                  <th>Tanggal</th>
-                  <th>Deskripsi Belanja</th>
-                  <th>Harga</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <br>
-                  <br>
-                  <td colspan="2" class="total">Total:</td>
-                  <td id="total-harga" class="total">0</td>
-                  <td></td>
-                </tr>
-              </tfoot>
-              
-            </table>
-            <br>
-            <br><center>
-          <b></em>
-          <td>
-          
-          
-          
 
+#tabel-belanja tfoot tr {
+  background-color: #2c3e50;
+  color: #2c3e50;
+  border-radius: 0 0 10px 10px;
+}
+
+#tabel-belanja tfoot td {
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+#tabel-belanja tfoot td.total {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+#tabel-belanja th:first-child, #tabel-belanja td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+#tabel-belanja th:last-child, #tabel-belanja td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+<!--tampilan tabel belanja -->
+
+
+</style>
+</head>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large w3-light-grey">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">Home</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#plans" class="w3-button w3-block">Closing</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block">Agenda</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-button w3-block">Kontak</a>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <h1><b>Liqueri Reno - Mawar Novita	S.</b></h1>
+    <p>Website Desain @Liquerireno</p>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+      <img src="wedingrenomawar.jpg" style="width:100%">
+      <div class="w3-display-topleft w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Wedding Date - 10 Desember 2022</span>
       </div>
-    </section>
-	  <nav class="top-nav">
-		<div class="menu-wrapper">
-		  <ul class="menu">
-			<li>
-			  <a href="">Halaman Awal</a>
-			</li>
-			<li>
-			  <a href="">Tentang Reno & Mawar</a>
-			  <ul class="sub-menu">
-				<li>
-				  <a href="">— Foto - foto</a>
-				</li>
-				<li>
-				  <a href="">— Agenda Liburan</a>
-				</li>
-			  </ul>
-			</li>
-			<li>
-			  <a href="">Laporan Keuangan</a>
-			</li>
-			<li>
-			  <a href="">January 2023</a>
-			</li>
-			<li>
-			  <a href="">Februari 2023</a>
-			</li>
-		  </ul>
-		  <button class="menu-close" type="button" aria-label="close menu">✕</button>
-		</div>
-		<div class="fixed-menu">
-		  <h2 class="logo">Menu</h2>
-		  <button class="menu-toggle" type="button" aria-label="toggle menu">☰</button>
-		  <ul class="socials">
-			<li>
-			  <a href=""><button type="button" class="btn btn-primary whatsapp-button" button onclick="kirimWhatsApp()" class="blink-black">Kirim WhatsApp</button></a>
-			</li>
-			<li>
-			</li>
-			<li>
-			  <a href=""><button type="button" class="btn btn-primary whatsapp-button" button onclick="download()">Download</button></a>
-			</li>
-		  </ul>
-		</div>
-	  </nav>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="mawarnos.jpg" style="width:100%">
+      <div class="w3-display-middle w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Mawar Novita Sitorus</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="reno-ok.jpg" style="width:100%">
+      <div class="w3-display-topright w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Alvonsius Liqueri Reno</span>
+      </div>
+    </div>
 
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
     
-	 
-    
+      <div class="w3-center">
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Grid -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Diary Laporan Keuangan</span>
+    </div>
+
+	<br>
+  	  <div class="form-group text-center">
+  <label for="tanggal"><h4>Tanggal:</h4></label>
+  <div class="input-group date">
+    <input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="klik di kalender" readonly>
+    <span class="input-group-addon">
+      <i class="fa fa-calendar"></i>
+    </span>
+  </div>
+</div>
+
+<div id="kalender-container"></div>
+	<br>
+	<br>
+  <br>
+  <br>
+	<div class="form-group">
+    <label for="deskripsi">Deskripsi Belanja:</label>
+    <br>
+    <br>
+           <div class="input-group">
+        <input type="text" id="deskripsi" name="deskripsi" class="form-control">
+        <div class="input-group-append">
+            <button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                <span class="ml-2">Hapus</span>
+            </button>
+        </div>
+    </div>
+  </div>
+	<br>
+  <br>
+	<div class="form-group">
+  <label for="harga">Harga:</label>
+  <br>
+  <div class="input-group">
+    <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+        <span class="ml-2">Hapus</span>
+      </button>
+    </div>
+  </div>
+</div>
+	
+
+  <div class="form-group text-center">
+    <button type="button" class="btn btn-primary whatsapp-button" onclick="tambah()">
+      <i class="fa fa-shopping-cart"></i>
+      <span>Tambahkan Belanja</span>
+    </button>
+  </div>
+
+
+
+
+  <!-- Grid -->
+    <br>
+    <br>
+    <center>
+    <table id="tabel-belanja">
+			<thead>
+				<tr>
+					<th>Tanggal</th>
+					<th>Deskripsi Belanja</th>
+					<th>Harga</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="total">Total:</td>
+					<td id="total-harga" class="total">0</td>
+					<td></td>
+				</tr>
+			</tfoot>
+			
+		</table>
+  </center>
+
+
+
+  <!-- Grid -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <center>
+  <td>
+    <button type="button" class="btn btn-primary whatsapp-button" onclick="download()">
+  <i class="fas fa-download"></i> Download
+</button>
+<br>
+<br>
+<button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
+  <i class="fab fa-whatsapp"></i> Kirim WhatsApp
+</button>
+
+  </td>
+  </center>
   
 
+<!-- Footer -->
+
+<footer>
+
+<br>
+<br>
+<br>
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Kembali halaman awal</a>
+<br>
+
+
+
+    
+</footer>
+
+
 <script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+
 
 
 let belanjaan = [];
@@ -713,7 +842,12 @@ function formatNumber(input) {
     alert('Mohon masukkan angka saja');
     input.value = input.value.replace(/[^\d\.]*/g,'');
   }
+
+  // tambahan untuk menampilkan keyboard angka pada handphone Android
+  input.setAttribute('inputmode', 'numeric');
+  input.setAttribute('pattern', '\\d*');
 }
+
 
 
 function tambah() {
@@ -768,11 +902,14 @@ function tampilkanTabelBelanja() {
       tanggalText = document.createTextNode(belanja.tanggal);
     }
     
-    let deskripsiText = document.createTextNode(belanja.deskripsi);
+    let deskripsiText = document.createElement('div');
+    deskripsiText.style.textAlign = 'center'; // menambahkan style untuk align text menjadi center
+    deskripsiText.appendChild(document.createTextNode(belanja.deskripsi)); // mengappend text node pada div
     let hargaText = document.createTextNode(belanja.harga.toLocaleString());
     let aksiBtn = document.createElement('button');
-    let aksiText = document.createTextNode('Hapus');
-    aksiBtn.appendChild(aksiText);
+    let aksiIcon = document.createElement('i'); // membuat elemen <i> untuk icon
+    aksiIcon.classList.add('fas', 'fa-trash-alt'); // menambahkan class untuk icon
+    aksiBtn.appendChild(aksiIcon); // mengappend elemen <i> ke dalam tombol hapus
     aksiBtn.setAttribute('onclick', 'hapus(' + index + ')');
     tanggalCell.appendChild(tanggalText);
     deskripsiCell.appendChild(deskripsiText);
@@ -787,6 +924,8 @@ function tampilkanTabelBelanja() {
   downloadBtn.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(belanjaan)));
   downloadBtn.setAttribute('download', 'belanjaan.txt');
 }
+
+
 
 
 
@@ -819,9 +958,9 @@ function kirimWhatsApp() {
   let tabelBelanja = document.getElementById("tabel-belanja");
   let rowLength = tabelBelanja.rows.length;
   for (let i = 1; i < rowLength - 1; i++) {
-    let tanggal = tabelBelanja.rows[i].cells[0].innerHTML;
-    let deskripsi = tabelBelanja.rows[i].cells[1].innerHTML;
-    let harga = tabelBelanja.rows[i].cells[2].innerHTML;
+    let tanggal = tabelBelanja.rows[i].cells[0].innerText;
+    let deskripsi = tabelBelanja.rows[i].cells[1].innerText;
+    let harga = tabelBelanja.rows[i].cells[2].innerText;
     text += `${nomorUrut}. ${tanggal} - ${deskripsi} - ${harga}\n`;
     nomorUrut++;
   }
@@ -838,50 +977,55 @@ function kirimWhatsApp() {
 
 
 
+$(document).ready(function() {
+        // Mengatur format nama hari dalam bahasa Indonesia
+        moment.updateLocale('id', {
+          weekdaysMin: ['Mg', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb']
+        });
+
+        // Inisialisasi FullCalendar
+        $('#kalender-container').fullCalendar({
+          // Konfigurasi FullCalendar
+          header: {
+            center: 'prev,next today',
+            center: 'title',
+            left: 'month,listMonth' // tambahkan opsi listMonth
+          },
+          defaultView: 'month',
+          selectable: true,
+          selectHelper: true,
+          editable: true,
+          eventLimit: true, // allow "more" link when too many events
+          events: [
+            {
+              title: 'Mawar ke Balai berkuak',
+              start: '2023-04-06'
+            },
+            {
+              title: 'Dealine Bayar Rumah',
+              start: '2023-04-15'
+            }
+          ],
+          // Callback saat sebuah tanggal dipilih pada kalender
+          dayClick: function(date, jsEvent, view) {
+            // Set value input pada label tanggal dengan tanggal yang dipilih, dengan format tanggal Indonesia
+            var tanggalIndonesia = moment(date).locale('id').format('DD MMMM YYYY');
+            $('#tanggal').val(tanggalIndonesia);
+          }
+        });
+      });
 
 
 
 
-      
-	  const body = document.body;
-const topNav = document.querySelector(".top-nav");
-const menuToggle = topNav.querySelector(".menu-toggle");
-const menuClose = topNav.querySelector(".menu-close");
-const menuWrapper = topNav.querySelector(".menu-wrapper");
-const topBannerOverlay = document.querySelector(".top-banner-overlay");
-const isOpenedClass = "is-opened";
-const isMovedClass = "is-moved";
-const noTransitionClass = "no-transition";
-let resize;
 
-menuToggle.addEventListener("click", () => {
-  menuWrapper.classList.toggle(isOpenedClass);
-  topBannerOverlay.classList.toggle(isMovedClass);
-});
 
-menuClose.addEventListener("click", () => {
-  menuWrapper.classList.remove(isOpenedClass);
-  topBannerOverlay.classList.remove(isMovedClass);
-});
 
-document.addEventListener("keydown", (e) => {
-  if (e.key == "Escape" && menuWrapper.classList.contains(isOpenedClass)) {
-    menuClose.click();
-  }
-});
-
-window.addEventListener("resize", () => {
-  body.classList.add(noTransitionClass);
-  clearTimeout(resize);
-  resize = setTimeout(() => {
-    body.classList.remove(noTransitionClass);
-  }, 500);
-});
 
 
 
 
 </script>
 
-  </body>
-  </html>
+</body>
+</html>
