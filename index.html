@@ -608,6 +608,8 @@ label {
 <!--tampilan tabel belanja -->
 
 
+
+
 </style>
 </head>
 <body>
@@ -978,42 +980,46 @@ function kirimWhatsApp() {
 
 
 $(document).ready(function() {
-        // Mengatur format nama hari dalam bahasa Indonesia
-        moment.updateLocale('id', {
-          weekdaysMin: ['Mg', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb']
-        });
+    // Mengatur format nama hari dalam bahasa Indonesia
+    moment.updateLocale('id', {
+      weekdaysMin: ['Mg', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb']
+    });
 
-        // Inisialisasi FullCalendar
-        $('#kalender-container').fullCalendar({
-          // Konfigurasi FullCalendar
-          header: {
-            center: 'prev,next today',
-            center: 'title',
-            left: 'month,listMonth' // tambahkan opsi listMonth
-          },
-          defaultView: 'month',
-          selectable: true,
-          selectHelper: true,
-          editable: true,
-          eventLimit: true, // allow "more" link when too many events
-          events: [
-            {
-              title: 'Mawar ke Balai berkuak',
-              start: '2023-04-06'
-            },
-            {
-              title: 'Dealine Bayar Rumah',
-              start: '2023-04-15'
-            }
-          ],
-          // Callback saat sebuah tanggal dipilih pada kalender
-          dayClick: function(date, jsEvent, view) {
-            // Set value input pada label tanggal dengan tanggal yang dipilih, dengan format tanggal Indonesia
-            var tanggalIndonesia = moment(date).locale('id').format('DD MMMM YYYY');
-            $('#tanggal').val(tanggalIndonesia);
-          }
-        });
-      });
+    // Inisialisasi FullCalendar
+    $('#kalender-container').fullCalendar({
+      // Konfigurasi FullCalendar
+      header: {
+        center: 'prev,next today',
+        center: 'title',
+        left: 'month,listMonth' // tambahkan opsi listMonth
+      },
+      defaultView: 'month',
+      selectable: true,
+      selectHelper: true,
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'Mawar ke Balai berkuak',
+          start: '2023-04-06'
+        },
+        {
+          title: 'Dealine Bayar Rumah',
+          start: '2023-04-15'
+        }
+      ],
+      // Callback saat sebuah tanggal dipilih pada kalender
+      dayClick: function(date, jsEvent, view) {
+        // Set value input pada label tanggal dengan tanggal yang dipilih, dengan format tanggal Indonesia
+        var tanggalIndonesia = moment(date).locale('id').format('DD MMMM YYYY');
+        $('#tanggal').val(tanggalIndonesia);
+        
+        // Tampilkan notifikasi
+        alert('Makasih ya sayang, tanggal yg di pilih sudah ok');
+      }
+    });
+  });
+
 
 
 
