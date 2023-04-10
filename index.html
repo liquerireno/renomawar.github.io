@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Laporan Keuangan Reno & Mawar</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,11 +48,89 @@
 
 <!--Khusus kalender-->
 
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+
 <style>
-html,body,h1,h2,h3,h4 {
-font-family:"Lato", sans-serif;
-background:radial-gradient(ellipse at center, rgb(255, 253, 208) 0%, rgb(255, 245, 238) 35%, #FFF5EE 100%);
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+.menu-bar,
+.menu-bar li,
+.menu-bar li::before,
+.menu-bar li:hover::before,
+.menu-bar li:hover {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
 }
+
+
+-------------------------------------------------------------------------------
+.menu-bar.w3-top {
+  position: auto;
+  top: center;
+  left: 0;
+  width: auto;
+  display: auto;
+  justify-content: auto;  
+}
+
+.menu-bar {
+  border-radius: 100px;
+  height: auto;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  padding: 0 10px;
+  margin-top: 20px;
+  width: auto;
+  display: auto;
+  justify-content: auto; 
+}
+
+.menu-bar li {
+  list-style: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 12px 16px;
+  margin: 0 8px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  display: auto;
+  justify-content: auto; 
+}
+
+.menu-bar li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.2s;
+  border-radius: 25px;
+}
+
+.menu-bar li:hover::before {
+  background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+  box-shadow: 0px 3px 20px 0px black;
+  transform: scale(1.2);
+}
+
+.menu-bar li:hover {
+  color: black;
+}
+
+-------------------------------------------------------------------------------
 .mySlides {
   display: none;
   border: 2px dashed #000;
@@ -63,197 +146,299 @@ cursor:pointer
 <!-- menbuat tampilan pada tanggal -->
 /* Atur tinggi kalender */
 .fc {
-  height: auto;
+height: auto;
+
 }
 
 /* Atur warna latar belakang header */
 .fc-header {
-  background-color: #f2f2f2;
+background-color: #f2f2f2;
 }
 
-/* Atur ukuran font pada header kalender */
+
+
+/* Atur ukuran font pada header kalender /
+
 .fc-toolbar {
-  display: flex;
-  justify-content: right; /* atur posisi ke tengah */
-  align-items: center;
+display: flex;
+justify-content: flex-end; / atur posisi ke kanan */
+align-items: center;
+padding: 10px;
+
 }
 
 .fc-toolbar h2 {
-  font-size: auto;
-  margin: 0; /* hapus margin bawaan */
+font-size: 28px;
+margin: 0; /* hapus margin bawaan */
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
 }
-
 
 /* Atur ukuran font pada nama hari */
 .fc-day-header {
-  font-size: auto;
-  text-transform: capitalize;
+font-size: 16px;
+text-transform: capitalize;
+font-weight: 500;
+color: #636363;
+padding: 5px;
 }
 
 /* Atur ukuran font pada tanggal */
 .fc-day-number {
-  font-size: auto;
-  font-weight: bold;
-}
-
-/* Atur warna latar belakang tanggal pada saat dihover */
-.fc-day:hover {
-  background-color: #f0938c
+font-size: 24px;
+font-weight: bold;
+color: #4a4a4a;
+margin-top: 10px;
+margin-bottom: 5px;
 }
 
 /* Atur warna latar belakang pada tanggal yang dipilih */
 .fc-day.fc-state-highlight {
-  background-color: #ffcc00 !important;
-}
-
-/* Atur warna latar belakang pada tanggal yang dipilih dengan mouse */
-.fc-day.fc-state-down {
-  background-color: #000000 !important;
+background-color: #f79494 !important;
+color: #4a4a4a;
 }
 
 /* Atur teks nama hari dalam Bahasa Indonesia */
-.fc-day-header {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #000000;
-  padding: auto;
-  transition: all 0.3s ease-in-out;
+/* Tombol today */
+.fc-today-button {
+  background-color: #f2f2f2;
+  color: #4a4a4a;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 3px;
 }
 
-.fc-day-header:hover {
-  color: #FF0000;
-  transform: rotate(360deg);
-}
-
-
+/* Warna header hari dengan campuran warna yang kekinian */
 .fc-day-header.fc-sun {
-  background-color: #f44336;
+  background: linear-gradient(to right, #f0932b, #eb4d4b);
 }
 
 .fc-day-header.fc-mon {
-  background-color: #2196f3;
+  background: linear-gradient(to right, #ff6b6b, #c0392b);
 }
 
 .fc-day-header.fc-tue {
-  background-color: #2196f3;
+  background: linear-gradient(to right, #48dbfb, #00cec9);
 }
 
 .fc-day-header.fc-wed {
-  background-color: #2196f3;
+  background: linear-gradient(to right, #ff9ff3, #f368e0);
 }
 
 .fc-day-header.fc-thu {
-  background-color: #2196f3;
+  background: linear-gradient(to right, #5f27cd, #341f97);
 }
 
 .fc-day-header.fc-fri {
-  background-color: #2196f3;
+  background: linear-gradient(to right, #1dd1a1, #10ac84);
 }
 
 .fc-day-header.fc-sat {
-  background-color: #9c27b0;
+  background: linear-gradient(to right, #ffdd59, #feca57);
 }
 
 
-/* Animasi saat dihover pada tanggal */
-.fc-day {
-  transition: all 0.2s ease;
-}
-
-.fc-day:hover {
-  transform: scale(1.2);
-}
 
 /* Animasi saat tanggal dipilih */
 .fc-day.fc-state-highlight {
-  animation: pulse 0.5s;
+animation: pulse 0.5s;
 }
 
 /* Keyframe untuk animasi */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.2);
+}
+100% {
+transform: scale(1);
+}
 }
 
 /* Border pada tanggal hari ini */
 .fc-day.fc-today {
-  border: 1px dashed #ff1493;
+border: 1px dashed #007bff;
 }
 
-.fc-toolbar h2 {
-  color: #000000;
-  font-family: "Playfair Display", serif;
-  font-size: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: auto;
-  text-shadow: 1px 1px #d9d9d9;
+/* Tombol navigasi */
+.fc-button {
+background-color: #007bff;
+color: rgb(5, 5, 5);
+border: none;
+font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+border-radius: 3px;
+padding: 5px 10px;
+margin-right: 5px;
+cursor: pointer;
+transition: all 0.2s ease;
 }
 
-
-.fc-button-group .fc-button {
-  background-color: #ff0000;
-  color: rgb(0, 0, 0);
+.fc-button:hover {
+background-color: #0069d9;
 }
 
-.fc-button-group button:hover {
-  background-color: #0062cc;
+/* Tombol today */
+.fc-today-button {
+background-color: #f2f2f2;
+color: #4a4a4a;
+border: none;
+font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+border-radius: 10px;
+padding: 8px 12px;
+margin-right: 10px;
+transition: all 0.3s ease-in-out;
 }
 
-.fc-day-number {
-  color: #301934;
-  font-family: cursive;
+.fc-today-button:hover {
+background-color: #4a4a4a;
+color: #f2f2f2;
 }
 
-.fc-today {
-  background-color: #f0f0f0;
-  border: 1px solid #007bff;
+/* Tombol prev/next */
+.fc-prev-button, .fc-next-button {
+background-color: #f2f2f2;
+color: #4a4a4a;
+border: none;
+font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+border-radius: 10px;
+padding: 8px 12px;
+margin-right: 10px;
+transition: all 0.3s ease-in-out;
 }
 
+.fc-prev-button:hover, .fc-next-button:hover {
+background-color: #4a4a4a;
+color: #f2f2f2;
+}
+
+/* Bulan dan Tahun pada header kalender */
+.fc-center h2 {
+color: #000000;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 30px;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: auto;
+text-shadow: 1px 1px #d9d9d9;
+margin: 0;
+}
+
+/* Navigasi tanggal pada header kalender */
+.fc-center .fc-button-group button {
+background-color: #4a4a4a;
+border: none;
+color: #f2f2f2;
+font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+border-radius: 10px;
+padding: 8px 12px;
+margin-right: 10px;
+transition: all 0.3s ease-in-out;
+}
+
+.fc-center .fc-button-group button:hover {
+background-color: #f0938c;
+color: #f2f2f2;
+}
+
+/* Hari pada header kalender */
 .fc-day-header {
-  background-color: #f0f0f0;
-  border: 1px solid rgb(255, 0, 0);
+text-transform: uppercase;
+font-weight: bold;
+color: #4a4a4a;
+background-color: #f2f2f2;
+border: none;
+padding: 8px 0;
+}
+
+/* Tanggal pada kalender */
+.fc-day-number {
+font-weight: bold;
+color: #000000;
+font-size: 18px;
+}
+
+/* Animasi saat tanggal dipilih */
+.fc-day.fc-state-highlight {
+animation: pulse 0.5s;
+}
+
+
+.fc-day.fc-today {
+border: 2px solid #ffa500; / warna orange /
+border-radius: 5px;
+box-shadow: 0px 0px 5px #ffa500; / tambahan efek bayangan */
+}
+
+/* Animasi saat dihover pada tanggal */
+.fc-day {
+transition: all 0.2s ease;
+}
+
+.fc-day:hover {
+transform: scale(1.05);
+}
+
+/* Atur warna latar belakang pada tanggal yang dipilih */
+.fc-day.fc-state-highlight {
+background-color: #f0938c !important;
+}
+
+/* Atur warna latar belakang pada tanggal yang dipilih dengan mouse */
+.fc-day.fc-state-down {
+background-color: #4a4a4a !important;
+}
+
+/* Atur warna latar belakang pada saat dihover pada tanggal */
+.fc-day:hover {
+background-color: #f0f0f0;
+}
+
+/* Event */
+.fc-event {
+background-color: #f0938c;
+border-color: #f0938c;
+font-style: normal;
+font-family: 'Montserrat', sans-serif;
+color: #f2f2f2;
+font-size: 16px;
+position: relative;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .fc-event {
-  background-color: #FAFA33;
-  border-color: #007bff;
-  font-style: normal;
-  font-family: cursive;
-  color: #000000;
-  font-size: auto;
-  position: relative;
-  animation: bounce 9.0s infinite alternate;  
+  background-color: #007bff;
+  border: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 5px 10px;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
 }
 
-@keyframes bounce {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(20px, -20px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-  75% {
-    transform: translate(-20px, -20px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+.fc-event:hover {
+  background-color: #0056b3;
 }
 
 .fc-event-title {
-  color: rgb(0, 0, 0);
+  font-weight: 500;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
 
 
 <!-- membuat tampilan tanggal, deskripsi belanja, harga dan tambahkan belanja -->
@@ -546,6 +731,8 @@ label {
 }
 <!-- membuat tampilan tanggal, deskripsi belanja, harga dan tambahkan belanja -->
 
+
+
 <!--tampilan tabel belanja -->
 #tabel-belanja {
   background: linear-gradient(to right, #2980b9, #2c3e50);
@@ -605,7 +792,8 @@ label {
 #tabel-belanja th:last-child, #tabel-belanja td:last-child {
   border-radius: 0 10px 10px 0;
 }
-<!--tampilan tabel belanja -->
+
+
 
 
 
@@ -615,21 +803,9 @@ label {
 <body>
 
 <!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-large w3-light-grey">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Home</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Closing</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">Agenda</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Kontak</a>
-    </div>
-  </div>
+<div class="menu-bar w3-top">
+  <li><i data-feather="check-circle"></i> Closing</li>
+  <li><i data-feather="image"></i> Photo</li>
 </div>
 
 <!-- Content -->
@@ -1022,7 +1198,7 @@ $(document).ready(function() {
 
 
 
-
+  feather.replace();
 
 
 
