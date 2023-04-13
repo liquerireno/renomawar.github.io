@@ -96,10 +96,11 @@ body,h1,h2,h3,h4,h5,h6 {
     </div>
     <br>
     <div class="w3-responsive">
-        <iframe id="project-iframe" class="w3-border" style="height: 800px"></iframe>
+        <div id="project-tab"></div>
     </div>
     <div id="result-text"></div>
 </div>
+
 
   
     
@@ -239,44 +240,42 @@ function w3_close() {
 
 
 $(document).ready(function() {
-    const showReadingBtn = document.getElementById("show-reading-btn");
-    const dateInput = document.getElementById("date-input");
-    const resultText = document.getElementById("result-text");
-    const projectIframe = document.getElementById("project-iframe");
+  const showReadingBtn = document.getElementById("show-reading-btn");
+  const dateInput = document.getElementById("date-input");
+  const resultText = document.getElementById("result-text");
 
-    dateInput.addEventListener("change", function() {
-      showReadingBtn.disabled = false;
-      showReadingBtn.setAttribute("data-date", dateInput.value);
-    });
+  dateInput.addEventListener("change", function() {
+    showReadingBtn.disabled = false;
+    showReadingBtn.setAttribute("data-date", dateInput.value);
+  });
 
-    showReadingBtn.addEventListener("click", function() {
-      const dateStr = this.getAttribute("data-date");
-      if (dateStr) {
-        const project = getProject(dateStr);
-        if (project) {
-          projectIframe.src = project.fileName + "#" + dateStr;
-          resultText.innerText = "";
-        } else {
-          resultText.innerText = "Bacaan Alkitab belum diupdate oleh Liqueri Reno.";
-          projectIframe.src = "";
-        }
+  showReadingBtn.addEventListener("click", function() {
+    const dateStr = this.getAttribute("data-date");
+    if (dateStr) {
+      const project = getProject(dateStr);
+      if (project) {
+        window.open(project.fileName + "#" + dateStr, "_blank");
+        resultText.innerText = "";
       } else {
-        resultText.innerText = "Silakan pilih tanggal terlebih dahulu.";
-        projectIframe.src = "";
+        resultText.innerText = "Bacaan Alkitab belum diupdate oleh Liqueri Reno.";
       }
-    });
-
-    function getProject(dateStr) {
-      const projects = [
-        { date: "2023-04-14", fileName: "13 april 2023.html" },
-        //tambahkan proyek baru di sini sesuai dengan tanggalnya
-      ];
-      const selectedProject = projects.find(function(project) {
-        return dateStr === project.date;
-      });
-      return selectedProject || null;
+    } else {
+      resultText.innerText = "Silakan pilih tanggal terlebih dahulu.";
     }
   });
+
+  function getProject(dateStr) {
+    const projects = [
+      { date: "2023-04-14", fileName: "13 april 2023.html" },
+      //tambahkan proyek baru di sini sesuai dengan tanggalnya
+    ];
+    const selectedProject = projects.find(function(project) {
+      return dateStr === project.date;
+    });
+    return selectedProject || null;
+  }
+});
+
 
 
 
