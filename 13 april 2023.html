@@ -4,26 +4,29 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- mobile metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+<!--Kalender-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+
 <style>
-    body,h1,h2,h3,h4,h5,h6 {
-      font-family: "Karma", sans-serif
-    }
-    .w3-bar-block .w3-bar-item {
-      padding:20px
-    }
-    
-   
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Karma", sans-serif
+}
+.w3-bar-block .w3-bar-item {
+  padding:20px
+}
+
 /* Atur padding pada tabel */
 table {
   padding: 8px;
@@ -34,31 +37,51 @@ table {
 
 
 
-  
-    
 </style>
 </head>
 <body>
 
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Diary Keuangan</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
 
 <!-- Top menu -->
 <div class="w3-top">
-    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-      <div class="w3-center w3-padding-16">
-        <button class="w3-button w3-border fas fa-check-circle">
-          Selesai Baca
-        </button>
-      </div>
-    </div>
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
   </div>
+</div>
+  
+
+  
+<hr>
 
   <!-- About Section -->
-  <div class="w3-container w3-padding-32 w3-center">
+  <div class="w3-container w3-padding-16">
     <h3>
-      <center>
-        <div style="text-align:justify;width:500px">
-        <div align="right"><font style="color:black;font-size:10px;font-weight:bold">&nbsp;&nbsp;&copy; <a title="Kitab Suci didapatkan dari imankatolik.or.id" href="" target="_blank">Alkitab Tampilan Full  </a></font></div>
-        
+        <div class="w3-top">
+            <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+              <div class="w3-center w3-padding-16">
+                <button class="w3-button w3-border fas fa-check-circle">
+                  Selesai Baca
+                </button>
+              </div>
+            </div>
+          </div> 
+    </h3>
+
+
+  
+    
+      <h4>
+        <br>
+      </h4>
+
+      <h6>
         <table width="100%">
         <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:1</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">Ketika Petrus dan Yohanes sedang berbicara kepada orang banyak, mereka tiba-tiba didatangi imam-imam dan kepala pengawal Bait Allah serta orang-orang Saduki.<br /><br /></td></tr>
         <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:2</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">Orang-orang itu sangat marah karena mereka mengajar orang banyak dan memberitakan, bahwa dalam Yesus ada kebangkitan dari antara orang mati.<br /><br /></td></tr>
@@ -71,19 +94,72 @@ table {
         <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:9</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">jika kami sekarang harus diperiksa karena suatu kebajikan kepada seorang sakit dan harus menerangkan dengan kuasa manakah orang itu disembuhkan,<br /><br /></td></tr>
         <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:10</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">maka ketahuilah oleh kamu sekalian dan oleh seluruh umat Israel, bahwa dalam nama Yesus Kristus, orang Nazaret, yang telah kamu salibkan, tetapi yang telah dibangkitkan Allah dari antara orang mati?bahwa oleh karena Yesus itulah orang ini berdiri dengan sehat sekarang di depan kamu.<br /><br /></td></tr>
         <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:11</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">Yesus adalah batu yang dibuang oleh tukang-tukang bangunan?yaitu kamu sendiri?,namun ia telah menjadi batu penjuru.<br /><br /></td></tr>
-        <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:12</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">Dan keselamatan tidak ada di dalam siapapun juga selain di dalam Dia, sebab di bawah kolong langit ini tidak ada nama lain yang diberikan kepada manusia yang olehnya kita dapat diselamatkan."<br /><br /></td></tr></table><hr /></div>
-        </center>
-    </h3>
+        <tr valign="top"><td class="v" width="5%" style="font-size:11px;"><b>Kis&nbsp;4:12</b></td><td class="v" width="95%" style="text-align: justify; padding-left: 20px; padding-right: 20px;">Dan keselamatan tidak ada di dalam siapapun juga selain di dalam Dia, sebab di bawah kolong langit ini tidak ada nama lain yang diberikan kepada manusia yang olehnya kita dapat diselamatkan."<br /><br /></td></tr></table><hr /></div>&nbsp;&nbsp;<i>"@Bacaan Alkitab Versi Keluarga Reno & Mawar"</i>&nbsp;&nbsp;
+    </h6>
+      
+  
+
+  
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="script.js"></script>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
 
 
-    <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
 
-    
-    <script>
-     
+$(document).ready(function() {
+  const showReadingBtn = document.getElementById("show-reading-btn");
+  const dateInput = document.getElementById("date-input");
+  const resultText = document.getElementById("result-text");
 
-        </script>
-        
+  dateInput.addEventListener("change", function() {
+    showReadingBtn.disabled = false;
+    showReadingBtn.setAttribute("data-date", dateInput.value);
+  });
+
+  showReadingBtn.addEventListener("click", function() {
+    const dateStr = this.getAttribute("data-date");
+    if (dateStr) {
+      const project = getProject(dateStr);
+      if (project) {
+        window.open(project.fileName + "#" + dateStr, "_blank");
+        resultText.innerText = "";
+      } else {
+        resultText.innerText = "Bacaan Alkitab belum diupdate oleh Liqueri Reno.";
+      }
+    } else {
+      resultText.innerText = "Silakan pilih tanggal terlebih dahulu.";
+    }
+  });
+
+  function getProject(dateStr) {
+    const projects = [
+      { date: "2023-04-14", fileName: "13 april 2023.html" },
+      //tambahkan proyek baru di sini sesuai dengan tanggalnya
+    ];
+    const selectedProject = projects.find(function(project) {
+      return dateStr === project.date;
+    });
+    return selectedProject || null;
+  }
+});
+
+
+
+
+
+
+</script>
 
 </body>
 </html>
