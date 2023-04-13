@@ -24,6 +24,30 @@ body,h1,h2,h3,h4,h5,h6 {
   padding:20px
 }
 
+/* CSS untuk membuat tampilan responsive */
+.w3-container {
+  max-width: 800px; /* Batasan lebar maksimum container */
+  margin: 0 auto; /* Pusatkan container */
+}
+
+#project-iframe {
+  width: 100%;
+  max-width: 800px; /* Batasan lebar maksimum iframe */
+  height: 800px; /* Tetapkan tinggi untuk iframe */
+}
+
+/* Atur ukuran tombol dan teks agar lebih responsif */
+#show-reading-btn {
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 16px 0;
+}
+
+#result-text {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
 
 
 
@@ -52,7 +76,8 @@ body,h1,h2,h3,h4,h5,h6 {
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32 w3-center">
-    <h3><label for="date-input">Pilih tanggal:</label>
+    <h3>
+      <label for="date-input">Pilih tanggal:</label>
       <input type="date" id="date-input">
       <br><br>
       <button id="show-reading-btn" disabled>Tampilkan Bacaan Alkitab</button>
@@ -61,22 +86,20 @@ body,h1,h2,h3,h4,h5,h6 {
       <div id="result-text"></div>
     </h3>
     <br>
-    <iframe id="project-iframe" width="100%" height="800" frameborder="0"></iframe>
+    <div class="w3-responsive">
+      <iframe id="project-iframe" frameborder="0"></iframe>
+    </div>
   </div>
+  
     
       <h4>&nbsp;&nbsp;&nbsp;Tema&nbsp;&nbsp;&nbsp;</h4>
       <h6>&nbsp;&nbsp;<i>"Pengorbanan di dalam sebuah Perkawinan"</i>&nbsp;&nbsp;</h6>
       <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Tahun lalu selama Prapaskah, Kementerian Perkawinan di gereja kami mensponsori Jalan Salib Pasangan. Salah satu pertanyaan yang diminta untuk kami renungkan adalah, “Dengan cara apa Anda berkorban untuk pasangan Anda?” Meskipun pada awalnya saya merasa sulit untuk merenungkannya, saya menghargai kesempatan untuk merenungkan dimensi pernikahan saya ini karena saya memahami itu adalah kunci untuk mengalami kegembiraan sejati dalam panggilan saya. Di akhir Stasiun, setiap pasangan diberi selembar kertas dan diminta untuk menuliskan satu pengorbanan khusus yang akan mereka lakukan untuk pasangan mereka pada Prapaskah itu. Kami kemudian pergi ke luar, di mana api yang berkobar menunggu kami untuk melemparkan potongan kertas kecil kami sebagai persembahan simbolis kepada Tuhan. Itu adalah salah satu kenangan Prapaskah saya yang paling berharga.&nbsp;&nbsp;</p>
-      
-       <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Berkorban untuk pasangan Anda bisa sangat menyakitkan untuk dilakukan, terutama bila sering kali Anda mungkin tidak berada di pihak penerima atau jika hati Anda tidak bersatu. Meskipun ini bisa menjadi jebakan bagi banyak pasangan, pernikahan tidak boleh saling balas. Apakah kita menganggap pasangan kita bertanggung jawab atas perilaku moral dan lurus? Ya! Apakah kita menahan cinta kita ketika kita merasa tidak dicintai? TIDAK! Undangan Kristus untuk mengasihi adalah tanpa batas, tanpa pamrih. Kita dipanggil untuk mencintai dengan bebas dan berkorban untuk pasangan kita dengan tulus. Panggilan adikodrati untuk mengasihi seperti Kristus hanya dapat datang melalui kesejatian hubungan dasar manusia.&nbsp;&nbsp;</p>
-        
-        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Panggilan pernikahan membuka kemanusiaan kita pada pandangan tak berujung tentang kasih Allah yang tak terbatas. Yesus, Sabda menjadi manusia, jadi oleh karena itu dalam daging kita, dalam kemanusiaan kita, kita mengungkapkan kasih Allah dengan cara yang luar biasa melalui saat-saat biasa dalam kehidupan kita sehari-hari. Kita dipanggil untuk menjadi Kristus bagi pasangan kita. Sama seperti Dia mengorbankan hidup-Nya untuk kita masing-masing, kita juga dipanggil dalam pernikahan untuk mengorbankan hidup kita melalui tindakan kecil setiap hari. Pengorbanan secara harfiah berarti “menjadikan kudus.” Dengan setiap tindakan pengorbanan yang dilakukan dalam kasih kepada pasangan kita, kita tidak hanya tumbuh secara pribadi dalam kekudusan, tetapi kita memupuk kekudusan dalam pernikahan kita dan dalam keluarga kita.&nbsp;&nbsp;</p>
-        
-        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Ada saat-saat ketika Anda mengorbankan keinginan Anda untuk memiliki atau melakukan sesuatu karena cinta untuk kekasih Anda – dan kadang-kadang hanya melalui tanggung jawab sehari-hari tanpa mengeluh adalah sebuah pengorbanan. Sering kali ketika suami saya dan saya baru saja jatuh ke tempat tidur di malam hari setelah seharian penuh bekerja, menjalankan anak-anak untuk berlatih, menyiapkan makanan, memandikan balita kami, mendengarkan remaja kami, mengubah apa yang tampak seperti tahun ke-100 .bola lampu dalam 100 hari terakhir, dan mengambil rumah, tetapi jika kita melakukan semua tugas itu dengan cinta dan semangat pengorbanan, maka rumah kita menjadi sekolah cinta melalui momen-momen biasa setiap hari. Namun kenyataannya, ini sulit dilakukan! Dibutuhkan doa yang gigih, visi, dan kesabaran yang sangat besar untuk menjalani pernikahan dan kehidupan keluarga dengan hasrat, tujuan, dan hati yang berkorban.&nbsp;&nbsp;</p>
-        
-        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Prapaskah dalam waktu yang ideal untuk dengan sungguh-sungguh membedakan seberapa baik Anda menjalani ini. Cinta sejati membutuhkan pengorbanan dan tidak ada cinta yang lebih besar di sisi Surga ini, selain pertukaran cinta sejati dalam Sakramen Perkawinan.&nbsp;&nbsp;</p>
-        
-        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Mungkin Anda dapat mempertimbangkan untuk memilih satu cara yang secara khusus dapat Anda korbankan untuk pasangan Anda di Prapaskah ini. Jangan beri tahu mereka bahwa Anda sedang melakukannya–lakukan saja. Mungkin Anda memiliki kesempatan yang jelas dalam pernikahan Anda untuk berkorban, tetapi Anda belum menerimanya. Tanyakan pada diri sendiri, mengapa? Apa yang menahanmu? Tuhan sering menempatkan situasi yang sangat jelas tepat di depan kita dan terkadang kita buta terhadapnya. Apakah pasangan Anda sedang mengalami masa-masa sulit? Apa yang dapat Anda lakukan untuk mendukung mereka? Apakah mereka menderita makanan fisik? Apa yang dapat Anda lakukan untuk membantu meringankan rasa sakit mereka atau membuat hidup mereka sedikit lebih mudah? Kita tidak perlu jauh-jauh mencari kesempatan untuk menunjukkan cinta sejati dalam pernikahan kita.&nbsp;&nbsp;</p>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Berkorban untuk pasangan Anda bisa sangat menyakitkan untuk dilakukan, terutama bila sering kali Anda mungkin tidak berada di pihak penerima atau jika hati Anda tidak bersatu. Meskipun ini bisa menjadi jebakan bagi banyak pasangan, pernikahan tidak boleh saling balas. Apakah kita menganggap pasangan kita bertanggung jawab atas perilaku moral dan lurus? Ya! Apakah kita menahan cinta kita ketika kita merasa tidak dicintai? TIDAK! Undangan Kristus untuk mengasihi adalah tanpa batas, tanpa pamrih. Kita dipanggil untuk mencintai dengan bebas dan berkorban untuk pasangan kita dengan tulus. Panggilan adikodrati untuk mengasihi seperti Kristus hanya dapat datang melalui kesejatian hubungan dasar manusia.&nbsp;&nbsp;</p>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Panggilan pernikahan membuka kemanusiaan kita pada pandangan tak berujung tentang kasih Allah yang tak terbatas. Yesus, Sabda menjadi manusia, jadi oleh karena itu dalam daging kita, dalam kemanusiaan kita, kita mengungkapkan kasih Allah dengan cara yang luar biasa melalui saat-saat biasa dalam kehidupan kita sehari-hari. Kita dipanggil untuk menjadi Kristus bagi pasangan kita. Sama seperti Dia mengorbankan hidup-Nya untuk kita masing-masing, kita juga dipanggil dalam pernikahan untuk mengorbankan hidup kita melalui tindakan kecil setiap hari. Pengorbanan secara harfiah berarti “menjadikan kudus.” Dengan setiap tindakan pengorbanan yang dilakukan dalam kasih kepada pasangan kita, kita tidak hanya tumbuh secara pribadi dalam kekudusan, tetapi kita memupuk kekudusan dalam pernikahan kita dan dalam keluarga kita.&nbsp;&nbsp;</p>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Ada saat-saat ketika Anda mengorbankan keinginan Anda untuk memiliki atau melakukan sesuatu karena cinta untuk kekasih Anda – dan kadang-kadang hanya melalui tanggung jawab sehari-hari tanpa mengeluh adalah sebuah pengorbanan. Sering kali ketika suami saya dan saya baru saja jatuh ke tempat tidur di malam hari setelah seharian penuh bekerja, menjalankan anak-anak untuk berlatih, menyiapkan makanan, memandikan balita kami, mendengarkan remaja kami, mengubah apa yang tampak seperti tahun ke-100 .bola lampu dalam 100 hari terakhir, dan mengambil rumah, tetapi jika kita melakukan semua tugas itu dengan cinta dan semangat pengorbanan, maka rumah kita menjadi sekolah cinta melalui momen-momen biasa setiap hari. Namun kenyataannya, ini sulit dilakukan! Dibutuhkan doa yang gigih, visi, dan kesabaran yang sangat besar untuk menjalani pernikahan dan kehidupan keluarga dengan hasrat, tujuan, dan hati yang berkorban.&nbsp;&nbsp;</p>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Prapaskah dalam waktu yang ideal untuk dengan sungguh-sungguh membedakan seberapa baik Anda menjalani ini. Cinta sejati membutuhkan pengorbanan dan tidak ada cinta yang lebih besar di sisi Surga ini, selain pertukaran cinta sejati dalam Sakramen Perkawinan.&nbsp;&nbsp;</p>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Mungkin Anda dapat mempertimbangkan untuk memilih satu cara yang secara khusus dapat Anda korbankan untuk pasangan Anda di Prapaskah ini. Jangan beri tahu mereka bahwa Anda sedang melakukannya–lakukan saja. Mungkin Anda memiliki kesempatan yang jelas dalam pernikahan Anda untuk berkorban, tetapi Anda belum menerimanya. Tanyakan pada diri sendiri, mengapa? Apa yang menahanmu? Tuhan sering menempatkan situasi yang sangat jelas tepat di depan kita dan terkadang kita buta terhadapnya. Apakah pasangan Anda sedang mengalami masa-masa sulit? Apa yang dapat Anda lakukan untuk mendukung mereka? Apakah mereka menderita makanan fisik? Apa yang dapat Anda lakukan untuk membantu meringankan rasa sakit mereka atau membuat hidup mereka sedikit lebih mudah? Kita tidak perlu jauh-jauh mencari kesempatan untuk menunjukkan cinta sejati dalam pernikahan kita.&nbsp;&nbsp;</p>
     </div>
   </div>
   <hr id="about">
