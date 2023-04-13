@@ -21,9 +21,42 @@
    
 /* Atur padding pada tabel */
 table {
-  padding: 8px;
   font-size: 18px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+/* Atur margin pada setiap sel */
+td, th {
+  padding: 8px;
+}
+
+/* Atur border dan background pada sel header */
+th {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+}
+
+/* Atur border pada sel body */
+td {
+  border: 1px solid #ddd;
+}
+
+/* Atur lebar kolom pada desktop */
+@media (min-width: 768px) {
+  table {
+    width: 50%;
   }
+}
+
+/* Atur font-size untuk tampilan mobile */
+@media (max-width: 480px) {
+  table {
+    font-size: 14px;
+  }
+}
+
 
 
 
