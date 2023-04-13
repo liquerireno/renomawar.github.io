@@ -66,9 +66,9 @@ table {
         <div class="w3-top">
             <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
               <div class="w3-center w3-padding-16">
-                <button class="w3-button w3-border fas fa-check-circle">
+                <button id="selesaiBacaButton" class="w3-button w3-border fas fa-check-circle">
                   Selesai Baca
-                </button>
+              </button>         
               </div>
             </div>
           </div> 
@@ -106,53 +106,18 @@ table {
     <script src="script.js"></script>
 
 <script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
 
 
+// Ambil element tombol "Selesai Baca"
+const selesaiBacaButton = document.getElementById("selesaiBacaButton");
 
-$(document).ready(function() {
-  const showReadingBtn = document.getElementById("show-reading-btn");
-  const dateInput = document.getElementById("date-input");
-  const resultText = document.getElementById("result-text");
-
-  dateInput.addEventListener("change", function() {
-    showReadingBtn.disabled = false;
-    showReadingBtn.setAttribute("data-date", dateInput.value);
-  });
-
-  showReadingBtn.addEventListener("click", function() {
-    const dateStr = this.getAttribute("data-date");
-    if (dateStr) {
-      const project = getProject(dateStr);
-      if (project) {
-        window.open(project.fileName + "#" + dateStr, "_blank");
-        resultText.innerText = "";
-      } else {
-        resultText.innerText = "Bacaan Alkitab belum diupdate oleh Liqueri Reno.";
-      }
-    } else {
-      resultText.innerText = "Silakan pilih tanggal terlebih dahulu.";
-    }
-  });
-
-  function getProject(dateStr) {
-    const projects = [
-      { date: "2023-04-14", fileName: "13 april 2023.html" },
-      //tambahkan proyek baru di sini sesuai dengan tanggalnya
-    ];
-    const selectedProject = projects.find(function(project) {
-      return dateStr === project.date;
-    });
-    return selectedProject || null;
-  }
+// Tambahkan event listener untuk saat tombol diklik
+selesaiBacaButton.addEventListener("click", function() {
+  // Tutup tab saat ini
+  window.close();
 });
+
+
 
 
 
