@@ -666,16 +666,44 @@ content: "\f1e2";
 margin-right: 5px;
 }
 
+<!--Bacaan alkitab -->
+ li {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+      cursor: pointer;
+    }
+
+    li i {
+      margin-right: 10px;
+      color: #5f5f5f;
+    }
+
+    li:hover {
+      color: #2196F3;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
 </style>
 </head>
 <body>
 
 <!-- Links (sit on top) -->
 <div class="menu-bar w3-top">
-  <li><i data-feather="check-circle"></i> Closing</li>
-  <li><i data-feather="image"></i> Photo</li>
-</div>
-
+    <a href="closing.html">
+      <li><i data-feather="check-circle"></i> Closing</li>
+    </a>
+    <a href="bacaan-alkitab.html">
+      <li><i data-feather="book-open"></i> Alkitab & Foto</li>
+    </a>
+  </div>
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 
@@ -833,6 +861,19 @@ margin-right: 5px;
 
   </td>
   </center>
+<br>
+<br>
+<br>
+
+<!-- Grid -->
+<a href="bacaan-alkitab.html">
+  <div class="w3-row w3-container">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Bacaan Alkitab</span>
+  </div>
+</a>
+
+
+
   
 
 <!-- Footer -->
@@ -1041,7 +1082,7 @@ $('#kalender-container').fullCalendar({
     center: 'prev,next today',
     center: 'title',
     left: 'month,listMonth' // tambahkan opsi listMonth
-  },
+    },
   defaultView: 'month',
   selectable: true,
   selectHelper: true,
