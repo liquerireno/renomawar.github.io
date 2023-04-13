@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+<!--Kalender-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Karma", sans-serif
+}
+.w3-bar-block .w3-bar-item {
+  padding:20px
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Diary Keuangan</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+  </div>
+</div>
+  
+
+  
+<hr>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">
+    <h3><label for="date-input">Pilih tanggal:</label>
+      <input type="date" id="date-input">
+      <br><br>
+      <button id="show-reading-btn" disabled>Tampilkan Bacaan Alkitab</button>
+      <br>
+      <br>
+      <div id="result-text"></div>
+    </h3>
+    <br>
+    <iframe id="project-iframe" width="100%" height="800" frameborder="0"></iframe>
+  </div>
+    
+      <h4>&nbsp;&nbsp;&nbsp;Tema&nbsp;&nbsp;&nbsp;</h4>
+      <h6>&nbsp;&nbsp;<i>"Pengorbanan di dalam sebuah Perkawinan"</i>&nbsp;&nbsp;</h6>
+      <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Tahun lalu selama Prapaskah, Kementerian Perkawinan di gereja kami mensponsori Jalan Salib Pasangan. Salah satu pertanyaan yang diminta untuk kami renungkan adalah, “Dengan cara apa Anda berkorban untuk pasangan Anda?” Meskipun pada awalnya saya merasa sulit untuk merenungkannya, saya menghargai kesempatan untuk merenungkan dimensi pernikahan saya ini karena saya memahami itu adalah kunci untuk mengalami kegembiraan sejati dalam panggilan saya. Di akhir Stasiun, setiap pasangan diberi selembar kertas dan diminta untuk menuliskan satu pengorbanan khusus yang akan mereka lakukan untuk pasangan mereka pada Prapaskah itu. Kami kemudian pergi ke luar, di mana api yang berkobar menunggu kami untuk melemparkan potongan kertas kecil kami sebagai persembahan simbolis kepada Tuhan. Itu adalah salah satu kenangan Prapaskah saya yang paling berharga.&nbsp;&nbsp;</p>
+      
+       <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Berkorban untuk pasangan Anda bisa sangat menyakitkan untuk dilakukan, terutama bila sering kali Anda mungkin tidak berada di pihak penerima atau jika hati Anda tidak bersatu. Meskipun ini bisa menjadi jebakan bagi banyak pasangan, pernikahan tidak boleh saling balas. Apakah kita menganggap pasangan kita bertanggung jawab atas perilaku moral dan lurus? Ya! Apakah kita menahan cinta kita ketika kita merasa tidak dicintai? TIDAK! Undangan Kristus untuk mengasihi adalah tanpa batas, tanpa pamrih. Kita dipanggil untuk mencintai dengan bebas dan berkorban untuk pasangan kita dengan tulus. Panggilan adikodrati untuk mengasihi seperti Kristus hanya dapat datang melalui kesejatian hubungan dasar manusia.&nbsp;&nbsp;</p>
+        
+        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Panggilan pernikahan membuka kemanusiaan kita pada pandangan tak berujung tentang kasih Allah yang tak terbatas. Yesus, Sabda menjadi manusia, jadi oleh karena itu dalam daging kita, dalam kemanusiaan kita, kita mengungkapkan kasih Allah dengan cara yang luar biasa melalui saat-saat biasa dalam kehidupan kita sehari-hari. Kita dipanggil untuk menjadi Kristus bagi pasangan kita. Sama seperti Dia mengorbankan hidup-Nya untuk kita masing-masing, kita juga dipanggil dalam pernikahan untuk mengorbankan hidup kita melalui tindakan kecil setiap hari. Pengorbanan secara harfiah berarti “menjadikan kudus.” Dengan setiap tindakan pengorbanan yang dilakukan dalam kasih kepada pasangan kita, kita tidak hanya tumbuh secara pribadi dalam kekudusan, tetapi kita memupuk kekudusan dalam pernikahan kita dan dalam keluarga kita.&nbsp;&nbsp;</p>
+        
+        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Ada saat-saat ketika Anda mengorbankan keinginan Anda untuk memiliki atau melakukan sesuatu karena cinta untuk kekasih Anda – dan kadang-kadang hanya melalui tanggung jawab sehari-hari tanpa mengeluh adalah sebuah pengorbanan. Sering kali ketika suami saya dan saya baru saja jatuh ke tempat tidur di malam hari setelah seharian penuh bekerja, menjalankan anak-anak untuk berlatih, menyiapkan makanan, memandikan balita kami, mendengarkan remaja kami, mengubah apa yang tampak seperti tahun ke-100 .bola lampu dalam 100 hari terakhir, dan mengambil rumah, tetapi jika kita melakukan semua tugas itu dengan cinta dan semangat pengorbanan, maka rumah kita menjadi sekolah cinta melalui momen-momen biasa setiap hari. Namun kenyataannya, ini sulit dilakukan! Dibutuhkan doa yang gigih, visi, dan kesabaran yang sangat besar untuk menjalani pernikahan dan kehidupan keluarga dengan hasrat, tujuan, dan hati yang berkorban.&nbsp;&nbsp;</p>
+        
+        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Prapaskah dalam waktu yang ideal untuk dengan sungguh-sungguh membedakan seberapa baik Anda menjalani ini. Cinta sejati membutuhkan pengorbanan dan tidak ada cinta yang lebih besar di sisi Surga ini, selain pertukaran cinta sejati dalam Sakramen Perkawinan.&nbsp;&nbsp;</p>
+        
+        <p style="text-align: justify; padding-left: 20px; padding-right: 20px;">&nbsp;&nbsp;Mungkin Anda dapat mempertimbangkan untuk memilih satu cara yang secara khusus dapat Anda korbankan untuk pasangan Anda di Prapaskah ini. Jangan beri tahu mereka bahwa Anda sedang melakukannya–lakukan saja. Mungkin Anda memiliki kesempatan yang jelas dalam pernikahan Anda untuk berkorban, tetapi Anda belum menerimanya. Tanyakan pada diri sendiri, mengapa? Apa yang menahanmu? Tuhan sering menempatkan situasi yang sangat jelas tepat di depan kita dan terkadang kita buta terhadapnya. Apakah pasangan Anda sedang mengalami masa-masa sulit? Apa yang dapat Anda lakukan untuk mendukung mereka? Apakah mereka menderita makanan fisik? Apa yang dapat Anda lakukan untuk membantu meringankan rasa sakit mereka atau membuat hidup mereka sedikit lebih mudah? Kita tidak perlu jauh-jauh mencari kesempatan untuk menunjukkan cinta sejati dalam pernikahan kita.&nbsp;&nbsp;</p>
+    </div>
+  </div>
+  <hr id="about">
+  
+
+  <!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="pertama jalan.jpg" alt="Sandwich" style="width:100%">
+      <h3>Untuk Pertama, Jalan - jalan</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Pantai Jungkat, Mempawah Kalimantan Barat - Indonesia</p>
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="tahun baru.jpg" alt="Steak" style="width:100%">
+      <h3>Tahun Baruan</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Cafe Daisuke, Singkawang Kalimantan Barat - Indonesia</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="hotel borneo.jpg" alt="Cherries" style="width:100%">
+      <h3>Rooftop Hotel Borneo</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Hotel Borneo, Pontianak Kalimantan Barat - Indonesia</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="nonton bioskop.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Nonton Bioskop XXI</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Mega Mall, Pontianak Kalimantan Barat - Indonesia</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="tugu khatulistiwa.jpg" alt="Popsicle" style="width:100%">
+      <h3>Tugu Khatulistiwa</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Siantan, Pontianak Kalimantan Barat - Indonesia</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="natal.jpg" alt="Salmon" style="width:100%">
+      <h3>Natal Pertama Tahun 2021</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Gereja Katedral - Santo Yosep, Pontianak Kalimantan Barat - Indonesia</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="sosok.jpg" alt="Sandwich" style="width:100%">
+      <h3>Bukit</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Sosok, Sanggau Kalimantan Barat - Indonesia</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="afdeling.jpg" alt="Croissant" style="width:100%">
+      <h3>Berburu Jamur Sawit</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Afdeling, Meliau Kalimantan Barat - Indonesia</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+
+  <hr>
+  
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>Album Foto</h3>
+      <p>Inilah adalah kumpulan semua foto-foto yang dilindungi oleh hak cipta</p>
+      <p>Kompilasi by <a href="Reno & Mawar" target="_blank">Reno & Mawar</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3>Video</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <video src="tebak.avi" width="100%" controls></video>
+          <span class="w3-large">Tebak nama Hewam</span><br>
+          <span>kelinci</span>
+        </li>
+        <li class="w3-padding-16">
+          <video src="senyum.avi" width="100%" controls></video>
+          <span class="w3-large">Tebak Emoticon</span><br>
+          <span>Wajah Mengikuti icon</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Liburan</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Tahun Baruan</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Rooftop</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Makan</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Singkawang</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Tugu Khatulistiwa</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Keuangan</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Nonton Bioskop</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Hotel Borneo</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Foto</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Natal</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Foto Lucu</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Closing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Berburu Jamur</span>
+      </p>
+    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="script.js"></script>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+
+$(document).ready(function() {
+    const showReadingBtn = document.getElementById("show-reading-btn");
+    const dateInput = document.getElementById("date-input");
+    const resultText = document.getElementById("result-text");
+    const projectIframe = document.getElementById("project-iframe");
+
+    dateInput.addEventListener("change", function() {
+      showReadingBtn.disabled = false;
+      showReadingBtn.setAttribute("data-date", dateInput.value);
+    });
+
+    showReadingBtn.addEventListener("click", function() {
+      const dateStr = this.getAttribute("data-date");
+      if (dateStr) {
+        const project = getProject(dateStr);
+        if (project) {
+          projectIframe.src = project.fileName + "#" + dateStr;
+          resultText.innerText = "";
+        } else {
+          resultText.innerText = "Bacaan Alkitab belum diupdate oleh Liqueri Reno.";
+          projectIframe.src = "";
+        }
+      } else {
+        resultText.innerText = "Silakan pilih tanggal terlebih dahulu.";
+        projectIframe.src = "";
+      }
+    });
+
+    function getProject(dateStr) {
+      const projects = [
+        { date: "2023-04-14", fileName: "13 april 2023.html" },
+        //tambahkan proyek baru di sini sesuai dengan tanggalnya
+      ];
+      const selectedProject = projects.find(function(project) {
+        return dateStr === project.date;
+      });
+      return selectedProject || null;
+    }
+  });
+
+
+
+
+
+</script>
+
+</body>
+</html>
