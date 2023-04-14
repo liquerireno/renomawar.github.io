@@ -78,11 +78,10 @@ video {
 
 .w3-video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* aspect ratio 16:9 */
+  padding-top: 30px;
   height: 0;
   overflow: hidden;
-  max-width: 100%;
-  text-align: center; /* menengahkan tombol play dan pause */
 }
 
 .w3-video-container video {
@@ -91,22 +90,6 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.play-btn,
-.pause-btn {
-  opacity: 0.5; 
-  transition: opacity 0.3s ease; 
-  font-size: 3.5em;
-  position: absolute; /* agar tombol bisa ditempatkan di tengah */
-  top: 50%; /* posisi vertical tombol di tengah */
-  left: 50%; /* posisi horizontal tombol di tengah */
-  transform: translate(-50%, -50%); /* mengatur posisi tombol ke tengah */
-}
-
-.play-btn:hover,
-.pause-btn:hover {
-  opacity: 1; 
 }
 
 
@@ -266,35 +249,20 @@ video {
       <ul class="w3-ul w3-hoverable">
         <li class="w3-padding-16">
           <div class="w3-video-container">
-            <video id="video-player" src="tebak.mp4"></video>
-            <div class="play-btn" id="play-btn">
-              <i class="fa fa-play"></i>
-            </div>
-            <div class="pause-btn" id="pause-btn">
-              <i class="fa fa-pause"></i>
-            </div>
+            <video src="tebak.mp4" controls></video>
           </div>
           <span class="w3-large">Tebak nama Hewan</span><br>
           <span>kelinci</span>
         </li>
         <li class="w3-padding-16">
           <div class="w3-video-container">
-            <video id="video-player-2" src="senyum.mp4"></video>
-            <div class="play-btn" id="play-btn-2">
-              <i class="fa fa-play"></i>
-            </div>
-            <div class="pause-btn" id="pause-btn-2">
-              <i class="fa fa-pause"></i>
-            </div>
+            <video src="senyum.mp4" controls></video>
           </div>
           <span class="w3-large">Tebak Emoticon</span><br>
           <span>Wajah Mengikuti icon</span>
         </li> 
       </ul>
     </div>
-    <button class="play-btn" id="play-btn">Play</button>
-    <button class="pause-btn" id="pause-btn">Pause</button>
-
     
 
     <div class="w3-third w3-serif">
@@ -463,49 +431,6 @@ $(document).ready(function() {
 
 
 
-const videoPlayers = document.querySelectorAll("video");
-const playBtns = document.querySelectorAll(".play-btn");
-const pauseBtns = document.querySelectorAll(".pause-btn");
-
-videoPlayers.forEach((player, index) => {
-  playBtns[index].addEventListener("click", () => {
-    player.play();
-    playBtns[index].style.display = "none";
-    pauseBtns[index].style.display = "block";
-  });
-
-  pauseBtns[index].addEventListener("click", () => {
-    player.pause();
-    pauseBtns[index].style.display = "none";
-    playBtns[index].style.display = "block";
-  });
-
-  player.addEventListener("click", () => {
-    if (player.paused) {
-      player.play();
-      playBtns[index].style.display = "none";
-      pauseBtns[index].style.display = "block";
-    } else {
-      player.pause();
-      pauseBtns[index].style.display = "none";
-      playBtns[index].style.display = "block";
-    }
-  });
-  
-  player.addEventListener("mouseleave", () => {
-    if (!player.paused) {
-      playBtns[index].style.display = "none";
-      pauseBtns[index].style.display = "none";
-    }
-  });
-  
-  player.addEventListener("mouseenter", () => {
-    if (!player.paused) {
-      playBtns[index].style.display = "block";
-      pauseBtns[index].style.display = "block";
-    }
-  });
-});
 
 
 
