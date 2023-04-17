@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- CSS only -->
@@ -140,6 +140,106 @@ select {
 }
 
 
+#button-kas-tersedia 
+.fa-cash-register
+ {
+  margin-right: 12px;
+  font-size: auto;
+}
+
+#button-kas-tersedia 
+.fa-sort-down
+ {
+  margin-left: 160px;
+  }
+
+
+#button-tipe-penghasilan 
+.fa-piggy-bank
+ {
+  margin-right: 10px;
+  font-size: auto;
+}
+
+#button-tipe-penghasilan 
+.fa-sort-down
+ {
+  margin-left: 130px;
+  }
+
+
+#button-pengeluaran 
+.fa-bag-shopping
+ {
+  margin-right: 17px;
+  font-size: auto;
+}
+
+#button-pengeluaran 
+.fa-sort-down
+ {
+  margin-left: 160px;
+  }
+
+/* untuk mobile */
+@media (max-width: 768px) {
+#button-kas-tersedia .fa-cash-register {
+margin-right: 5px;
+font-size: 14px;
+}
+
+#button-kas-tersedia .fa-sort-down {
+margin-left: 5px;
+}
+
+#button-tipe-penghasilan .fa-piggy-bank {
+margin-right: 5px;
+font-size: 14px;
+}
+
+#button-tipe-penghasilan .fa-sort-down {
+margin-left: 5px;
+}
+
+#button-pengeluaran .fa-bag-shopping {
+margin-right: 5px;
+font-size: 14px;
+}
+
+#button-pengeluaran .fa-sort-down {
+margin-left: 5px;
+}
+}
+
+/* untuk desktop */
+@media (min-width: 769px) {
+#button-kas-tersedia .fa-cash-register {
+margin-right: 12px;
+font-size: auto;
+}
+
+#button-kas-tersedia .fa-sort-down {
+margin-left: 160px;
+}
+
+#button-tipe-penghasilan .fa-piggy-bank {
+margin-right: 10px;
+font-size: auto;
+}
+
+#button-tipe-penghasilan .fa-sort-down {
+margin-left: 130px;
+}
+
+#button-pengeluaran .fa-bag-shopping {
+margin-right: 17px;
+font-size: auto;
+}
+
+#button-pengeluaran .fa-sort-down {
+margin-left: 160px;
+}
+}
 
 
 
@@ -226,8 +326,8 @@ select {
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align" id="button-kas-tersedia"><i class="fas fa-clipboard-list fa-fw w3-margin-right"></i> Kas Tersedia</button>
-          <div id="Demo1" class="w3-hide w3-container">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align" id="button-kas-tersedia"><i class="fa-solid fa-cash-register fa-xl"></i> Kas Tersedia<i class="fa-solid fa-sort-down fa-fade"></i></button>
+          <div id="Demo1" class="w3-hide w3-container" style="border-style: dashed; border-width: 1px;"> 
             <br>
             <center><strong><i class="fas fa-wallet"></i> Cash di Dompet</strong></center> 
             <br>
@@ -1739,12 +1839,12 @@ select {
 
             <br>
             
-
+            
           </div>
           
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
-            <i class="fa fa-money fa-fw w3-margin-right"></i> Tipe Penghasilan</button>         
-        <div id="Demo2" class="w3-hide w3-container">
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align" id="button-tipe-penghasilan">
+            <i class="fa-solid fa-piggy-bank fa-xl"></i> Tipe Penghasilan<i class="fa-solid fa-sort-down fa-fade"></i></button>         
+            <div id="Demo2" class="w3-hide w3-container" style="border-style: dashed; border-width: 1px;">
           <br>
           <center><p>Cicilan Rumah <i class="fas fa-home"></i> <span style="background-color: red; color: white; padding: 5px; border: 1px dashed white;">Rp. 1.285.000</span></p></center>
             <select name="tahun" onchange="
@@ -1758,6 +1858,87 @@ select {
                 } else {
                     document.getElementById('tabel_penghasilan2').style.display = 'none';
                 }
+                if(this.value=='2025') {
+                    document.getElementById('tabel_penghasilan3').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan3').style.display = 'none';
+                }
+                if(this.value=='2026') {
+                    document.getElementById('tabel_penghasilan4').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan4').style.display = 'none';
+                }
+                if(this.value=='2027') {
+                    document.getElementById('tabel_penghasilan5').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan5').style.display = 'none';
+                }
+                if(this.value=='2028') {
+                    document.getElementById('tabel_penghasilan6').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan6').style.display = 'none';
+                }
+                if(this.value=='2029') {
+                    document.getElementById('tabel_penghasilan7').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan7').style.display = 'none';
+                }
+                if(this.value=='2030') {
+                    document.getElementById('tabel_penghasilan8').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan8').style.display = 'none';
+                }
+                if(this.value=='2031') {
+                    document.getElementById('tabel_penghasilan9').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan9').style.display = 'none';
+                }
+                if(this.value=='2032') {
+                    document.getElementById('tabel_penghasilan10').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan10').style.display = 'none';
+                }
+                if(this.value=='2033') {
+                    document.getElementById('tabel_penghasilan11').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan11').style.display = 'none';
+                }
+                if(this.value=='2034') {
+                    document.getElementById('tabel_penghasilan12').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan12').style.display = 'none';
+                }
+                if(this.value=='2035') {
+                    document.getElementById('tabel_penghasilan13').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan13').style.display = 'none';
+                }
+                if(this.value=='2036') {
+                    document.getElementById('tabel_penghasilan14').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan14').style.display = 'none';
+                }
+                if(this.value=='2037') {
+                    document.getElementById('tabel_penghasilan15').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan15').style.display = 'none';
+                }
+                if(this.value=='2038') {
+                    document.getElementById('tabel_penghasilan16').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan16').style.display = 'none';
+                }
+                if(this.value=='2039') {
+                    document.getElementById('tabel_penghasilan17').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan17').style.display = 'none';
+                }
+                if(this.value=='2040') {
+                    document.getElementById('tabel_penghasilan18').style.display = 'block';
+                } else {
+                    document.getElementById('tabel_penghasilan18').style.display = 'none';
+                }
+
                 //tambahkan code untuk tahun 2024-2040
             ">
                 <option value="----">Pilih Tahun</option>
@@ -1886,70 +2067,70 @@ select {
               </thead>
               <tbody>
                 <tr>
-                  <td>Januari 2023</td>
+                  <td>Januari 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Februari 2023</td>
+                  <td>Februari 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <td>Maret 2023</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>April 2023</td>
+                <td>Maret 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Mei 2023</td>
+                  <td>April 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Juni 2023</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <td>Juli 2023</td>
+                  <td>Mei 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Agustus 2023</td>
+                  <td>Juni 2024</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Sepetember 2023</td>
+                  <td>Agustus 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Oktober 2023</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <td>November 2023</td>
+                  <td>Sepetember 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Desember 2023</td>
+                  <td>Oktober 2024</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2024</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2024</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1959,19 +2140,1493 @@ select {
                 <td></td>
                 <td></td>
                 <td><strong>Jumlah Penghasilan</strong></td>
-                <td style="text-align: right;">Rp 15.796.904</td>
+                <td style="text-align: right;"></td>
                 </tr>
             </table>
               </tbody>
             </table>
           </div>
 
+          <div class="table-responsive">
+            <table id="tabel_penghasilan3" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2025</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan4" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2026</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan5" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2027</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan6" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2028</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan7" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2029</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan8" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2030</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan9" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2031</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan10" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2032</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan11" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2033</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan12" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2034</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan13" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2035</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan14" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2036</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan15" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2037</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan16" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2038</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan17" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2039</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  <div class="table-responsive">
+            <table id="tabel_penghasilan18" class="table" style="display:none;">
+              <thead>
+                <strong><tr>
+                  <th>Bulan</th>
+                  <th>Gaji Tetap</th>
+                  <th>Pendapatan Lainnya</th>
+                  <th>Total Penghasilan</th>
+                </tr></strong>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Januari 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Februari 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Maret 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>April 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mei 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Juni 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>Juli 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Agustus 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sepetember 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Oktober 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <td>November 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Desember 2040</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                 <!-- tambahkan baris untuk bulan-bulan berikutnya -->
+                <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Jumlah Penghasilan</strong></td>
+                <td style="text-align: right;"></td>
+                </tr>
+            </table>
+              </tbody>
+            </table>
+          </div>
+		  
+		  
+
           
           
          
         </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Pengeluaran</button>
-          <div id="Demo3" class="w3-hide w3-container">
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align" id="button-pengeluaran"><i class="fa-sharp fa-solid fa-bag-shopping fa-xl"></i> Pengeluaran<i class="fa-solid fa-sort-down fa-fade"></i></button>
+          <div id="Demo3" class="w3-hide w3-container" style="border-style: dashed; border-width: 1px;">
          <div class="w3-row-padding">
          <br>
            <div class="w3-half">
