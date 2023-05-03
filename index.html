@@ -17,8 +17,11 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
+
+  <!-- Theme style ----------------------------------------------------------------------->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
@@ -494,7 +497,7 @@
             <!-- Tanggal -->
             <div class="card direct-chat direct-chat-primary">
               <div class="card-header">
-                <h3 class="card-title">
+                <h3 class="card-header">
                   <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal" max="9999-12-31">
                 </h3>       
                 </div>       
@@ -535,6 +538,8 @@
                       <i class="fa-brands fa-shopify fa-lg"></i>
                       <span>Tambahkan Belanja</span>
                     </button>
+                    <br>
+                    <br>
                     <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
                       <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim WhatsApp
                     </button>
@@ -542,7 +547,7 @@
                   <br>
 
 
-                  <div class="card direct-chat direct-chat-primary">
+                  <div class="card">
                     <div class="card recent-sales overflow-auto">
                       <table id="tabel-belanja" class="table Ashleigh table-borderless">
                         <thead>
@@ -570,7 +575,7 @@
                 <!-- End Grid -->
 
                  <!-- Pencarian Ddaftar belanja -->
-                 <div class="card direct-chat direct-chat-primary">
+                 <div class="card">
                   <div class="card recent-sales overflow-auto">
                     <div id="daftar-belanjaan"></div>
                     <div class="text-end fw-bold">
