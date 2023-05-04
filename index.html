@@ -42,8 +42,7 @@
   </script>
   <!-- Bootstrap 4 -->
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
+  
   <!-- Sparkline -->
   <script src="plugins/sparklines/sparkline.js"></script>
   <!-- JQVMap -->
@@ -491,7 +490,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item active">Informasi</li>
+              <li class="breadcrumb-item active"><i class="fa-solid fa-house-circle-check"></i></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -499,19 +498,84 @@
     </div>
     <!-- /.content-header -->
 
-    
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">                  
-                </h3>               
-                
 
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Rp 6.613.452</h3>
+
+                <p>Kas Tersedia</p> 
+                
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-stack-overflow"></i>
+              </div>
+              <a href="#" class="small-box-footer">April 2023 <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>Rp 23.695.356</h3>
+
+                <p>Penghasilan</p>
+              </div>
+              <div class="icon">
+                <i class="fa-regular fa-handshake"></i>
+              </div>
+              <a href="#" class="small-box-footer">Januari - Maret 2023 <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>Rp 18.196.052</h3>
+
+                <p>Pengeluaran</p>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <a href="#" class="small-box-footer">Januari - Maret 2023 <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>Rp 2.574.852</h3>
+
+                <p>Cash di Dompet</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">Januari - Maret 2023 <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+
+    
+       
             <!-- Tanggal -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
                 Pilih Tanggal
-                  <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal" max="9999-12-31">
+                  <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal">
                 </h3>       
                 </div>       
 
@@ -560,12 +624,12 @@
                   <br>
 
 
-                  
-                      <table id="tabel-belanja" class="table Ashleigh table-borderless">
+                  <div class="card-body p-0">
+                    <table id="tabel-belanja" class="table table-sm">
                         <thead>
                           <tr>
                             <th scope="col">Tanggal</th>
-                            <th scope="col">Deskripsi Belanja</th>
+                            <th scope="col">Nama Item</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Hapus</th>
                           </tr>
@@ -582,19 +646,30 @@
                         </table>
                      
                 </div>
+                </div>
+                </div>
+                </div>
                 <!-- End Grid -->
                 <br>
 
                  <!-- Pencarian Ddaftar belanja -->
-                 <div class="card">
-                  <div class="card recent-sales overflow-auto">
-                    <div id="daftar-belanjaan"></div>
-                    <div class="text-end fw-bold">
-                      <a href="contoh.html" target="myFrame" class="btn-cari" style="float: left;"> Klik <i class="fas fa-search fa-lg"></i> Rincian Belanja</a>
+                 
+                 <section class="content">
+                  <div class="container-fluid">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h3 class="card-title">
+                       <div id="daftar-belanjaan"></div>
+                    <div class="text-end fw-bold" style="padding-left: 12px;">
+                      <button onclick="window.open('contoh.html', 'myFrame');" class="btn btn-primary">
+                        Klik <i class="fa-solid fa-toggle-off fa-xl"></i> Rincian Belanja
+                      </button>
+                      
                     </div>
                   </div>
                   <iframe name="myFrame" frameborder="0" width="100%" height="500"></iframe>
                 </div>
+                
                 
 
 
@@ -604,7 +679,7 @@
                         
          
   <footer class="main-footer">
-    <strong>Copyright &copy; 2023 Edit Liqueri Reno by website<a href="https://adminlte.io"> AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2023 Liqueri Reno by website</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.2.0
