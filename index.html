@@ -99,19 +99,6 @@
 </script>
 
 
-<style>
-  /* hide the iframes by default */
-  #proyek-html iframe {
-    display: none;
-  }
-
-  /* show the active iframe */
-  #proyek-html iframe.active {
-    display: block;
-  }
-</style>
-
-
 
  
 
@@ -796,27 +783,7 @@
                   proyekHTML.style.display = "block";
                 }
 
-                // select all tab links
-                    const tabLinks = document.querySelectorAll('.tab-link');
-
-                  // add click event listener to each tab link
-                  tabLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                      // get the id of the clicked tab link
-                      const id = link.getAttribute('data-tab');
-
-                      // remove the "active" class from all iframes
-                      const iframes = document.querySelectorAll('#proyek-html iframe');
-                      iframes.forEach(iframe => {
-                        iframe.classList.remove('active');
-                      });
-
-                      // add the "active" class to the corresponding iframe
-                      const activeIframe = document.querySelector(`#${id}`);
-                      activeIframe.classList.add('active');
-                    });
-                  });
-
+                
               </script>
     
 
