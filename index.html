@@ -97,56 +97,19 @@
 
   gtag('config', 'G-6HX231MKVX');
 </script>
-  
-  <style>
-    iframe {
-  display: block;
-  width: 100%;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  border: none;
-}
 
-iframe.content {
-  height: 400px; /* Ubah ukuran iframe sesuai kebutuhan */
-  margin: 0 auto;
-  display: block;
-}
 
-iframe.content body {
-  margin: 0;
-  padding: 0;
-  font-size: 12px; /* Ubah ukuran font sesuai kebutuhan */
-}
+<style>
+  /* hide the iframes by default */
+  #proyek-html iframe {
+    display: none;
+  }
 
-iframe.content .table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-iframe.content .table th,
-iframe.content .table td {
-  padding: 0.25rem;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #dee2e6;
-}
-
-iframe.content .table th {
-  background-color: #6c757d;
-  color: #fff;
-}
-
-iframe.content .table td em {
-  font-style: normal;
-  font-size: 10px; /* Ukuran font pada teks 'tidak ditemukan' */
-}
-
-iframe.content .table td i {
-  font-size: 10px; /* Ukuran font pada ikon */
-}
-  </style>
+  /* show the active iframe */
+  #proyek-html iframe.active {
+    display: block;
+  }
+</style>
 
 
 
@@ -775,65 +738,41 @@ iframe.content .table td i {
               <div class="card-body">
               </div>
               <!-- Isi proyek HTML Anda disini -->
-              <div id="proyek-html" style="display:none;">
-                <iframe id="iframe-kas" src="" style="width:100%;height:500px;border:none;"></iframe>
-                <iframe id="iframe-pengeluaran" src="" style="width:100%;height:500px;border:none;"></iframe>
-                <iframe id="iframe-penghasilan" src="" style="width:100%;height:500px;border:none;"></iframe>
-                <iframe id="iframe-saldo-tabungan" src="" style="width:100%;height:500px;border:none;"></iframe>
-                <iframe id="iframe-pos-saldo" src="" style="width:100%;height:500px;border:none;"></iframe>
-              </div>
+              <div id="proyek-kas" class="proyek" style="display:none;"></div>
+              <div id="proyek-pengeluaran" class="proyek" style="display:none;"></div>
+              <div id="proyek-penghasilan" class="proyek" style="display:none;"></div>
+              <div id="proyek-saldo-tabungan" class="proyek" style="display:none;"></div>
+              <div id="proyek-pos-saldo" class="proyek" style="display:none;"></div>
+
 
                           
               <script>
-                function tampilkanProyek(proyek) {
-                  var kasIframe = document.getElementById("iframe-kas");
-                  var pengeluaranIframe = document.getElementById("iframe-pengeluaran");
-                  var penghasilanIframe = document.getElementById("iframe-penghasilan");
-                  var saldoTabunganIframe = document.getElementById("iframe-saldo-tabungan");
-                  var posSaldoIframe = document.getElementById("iframe-pos-saldo");
-    
-                  if(proyek === "kas") {
-                    kasIframe.setAttribute("src", "kas tersedia.html");
-                    kasIframe.style.display = "block";
-                    pengeluaranIframe.style.display = "none";
-                    penghasilanIframe.style.display = "none";
-                    saldoTabunganIframe.style.display = "none";
-                    posSaldoIframe.style.display = "none";
-                  } else if(proyek === "pengeluaran") {
-                    kasIframe.style.display = "none";
-                    pengeluaranIframe.setAttribute("src", "pengeluaran.html");
-                    pengeluaranIframe.style.display = "block";
-                    penghasilanIframe.style.display = "none";
-                    saldoTabunganIframe.style.display = "none";
-                    posSaldoIframe.style.display = "none";
-                  } else if(proyek === "penghasilan") {
-                    kasIframe.style.display = "none";
-                    pengeluaranIframe.style.display = "none";
-                    penghasilanIframe.setAttribute("src", "penghasilan.html");
-                    penghasilanIframe.style.display = "block";
-                    saldoTabunganIframe.style.display = "none";
-                    posSaldoIframe.style.display = "none";
-                  } else if(proyek === "saldo-tabungan") {
-                    kasIframe.style.display = "none";
-                    pengeluaranIframe.style.display = "none";
-                    penghasilanIframe.style.display = "none";
-                    saldoTabunganIframe.setAttribute("src", "saldo tabungan.html");
-                    saldoTabunganIframe.style.display = "block";
-                    posSaldoIframe.style.display = "none";
-                  } else if(proyek === "pos-saldo") {
-                    kasIframe.style.display = "none";
-                    pengeluaranIframe.style.display = "none";
-                    penghasilanIframe.style.display = "none";
-                    saldoTabunganIframe.style.display = "none";
-                    posSaldoIframe.setAttribute("src", "pos saldo.html");
-                    posSaldoIframe.style.display = "block";
-                  }
-                  
-                  var proyekHTML = document.getElementById("proyek-html");
-                  proyekHTML.style.display = "block";
+
+              function tampilkanProyek(proyek) {
+                var proyekKas = document.getElementById("proyek-kas");
+                var proyekPengeluaran = document.getElementById("proyek-pengeluaran");
+                var proyekPenghasilan = document.getElementById("proyek-penghasilan");
+                var proyekSaldoTabungan = document.getElementById("proyek-saldo-tabungan");
+                var proyekPosSaldo = document.getElementById("proyek-pos-saldo");
+
+                if (proyek === "kas") {
+                  window.open("kas tersedia.html", "_blank");
+                } else if (proyek === "pengeluaran") {
+                  window.open("pengeluaran.html", "_blank");
+                } else if (proyek === "penghasilan") {
+                  window.open("penghasilan.html", "_blank");
+                } else if (proyek === "saldo-tabungan") {
+                  window.open("saldo tabungan.html", "_blank");
                 }
 
-                
+                proyekKas.style.display = "none";
+                proyekPengeluaran.style.display = "none";
+                proyekPenghasilan.style.display = "none";
+                proyekSaldoTabungan.style.display = "none";
+                proyekPosSaldo.style.display = "none";
+              }
+
+
               </script>
     
 
