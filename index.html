@@ -677,7 +677,9 @@
                  
                  <section class="content">
                   <div class="container-fluid">
-                    <div class="card card-primary card-outline">                     
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h3 class="card-title">
                        <div id="daftar-belanjaan"></div>
                     <div class="text-end fw-bold" style="padding-left: 12px;">
                       <button onclick="window.open('contoh.html', 'myFrame');" class="btn btn-primary">
@@ -687,7 +689,7 @@
                     </div>
                   </div>
                   <iframe name="myFrame" frameborder="0" width="100%" height="500"></iframe>
-               
+                </div>
                   </div>
               </div>
 
@@ -710,22 +712,20 @@
                           <div class="card-header p-0 pt-1">
                             <ul class="nav nav-tabs" id="custom-tabs-five-tab" role="tablist">
                               <ul class="nav nav-tabs justify-content-center">
-                                <li class="nav-item">
-                                  <button class="btn btn-primary active" id="custom-tabs-five-normal-tab" data-toggle="pill" href="#custom-tabs-five-normal" role="tab" aria-controls="custom-tabs-five-normal" aria-selected="true">Kas Tersedia</button>
-                                </li>
-                                <li class="nav-item">
-                                  <button class="nav-link btn btn-primary" id="custom-tabs-five-pengeluaran-tab" data-toggle="pill" href="#custom-tabs-five-pengeluaran" role="tab" aria-controls="custom-tabs-five-pengeluaran" aria-selected="false">Pengeluaran</button>
-                                </li>
-                                <li class="nav-item">
-                                  <button class="nav-link btn btn-primary" id="custom-tabs-five-penghasilan-tab" data-toggle="pill" href="#custom-tabs-five-penghasilan" role="tab" aria-controls="custom-tabs-five-penghasilan" aria-selected="false">Penghasilan</button>
-                                </li>
-                                <li class="nav-item">
-                                  <button class="nav-link btn btn-primary" id="custom-tabs-five-saldo-tabungan-tab" data-toggle="pill" href="#custom-tabs-five-saldo-tabungan" role="tab" aria-controls="custom-tabs-five-saldo-tabungan" aria-selected="false">Saldo Tabungan</button>
-                                </li>
-                                <li class="nav-item">
-                                  <button class="nav-link btn btn-primary" id="custom-tabs-five-pos-saldo-tab" data-toggle="pill" href="#custom-tabs-five-pos-saldo" role="tab" aria-controls="custom-tabs-five-pos-saldo" aria-selected="false">Pos Saldo</button>
-                                </li>
-                                
+                                <li class="nav-item active">
+                                  <button class="btn btn-primary" id="custom-tabs-five-normal-tab" data-toggle="pill" href="#custom-tabs-five-normal" role="tab" aria-controls="custom-tabs-five-normal" aria-selected="true" onclick="tampilkanProyek('kas')">Kas Tersedia</button>
+                                  <li class="nav-item active">
+                                    <button class="nav-link btn btn-primary" id="custom-tabs-five-pengeluaran-tab" data-toggle="pill" href="#custom-tabs-five-pengeluaran" role="tab" aria-controls="custom-tabs-five-pengeluaran" aria-selected="false" onclick="tampilkanProyek('pengeluaran')">Pengeluaran</button>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <button class="nav-link btn btn-primary" id="custom-tabs-five-penghasilan-tab" data-toggle="pill" href="#custom-tabs-five-penghasilan" role="tab" aria-controls="custom-tabs-five-penghasilan" aria-selected="false" onclick="tampilkanProyek('penghasilan')">Penghasilan</button>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <button class="nav-link btn btn-primary" id="custom-tabs-five-saldo-tabungan-tab" data-toggle="pill" href="#custom-tabs-five-saldo-tabungan" role="tab" aria-controls="custom-tabs-five-saldo-tabungan" aria-selected="false" onclick="tampilkanProyek('saldo-tabungan')">Saldo Tabungan</button>
+                                  </li>
+                                  <li class="nav-item active">
+                                    <button class="nav-link btn btn-primary" id="custom-tabs-five-pos-saldo-tab" data-toggle="pill" href="#custom-tabs-five-pos-saldo" role="tab" aria-controls="custom-tabs-five-pos-saldo" aria-selected="false" onclick="tampilkanProyek('pos-saldo')">Pos Saldo</button>
+                                  </li>
                            
                               </ul>
                        
