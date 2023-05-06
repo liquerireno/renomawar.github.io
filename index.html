@@ -99,6 +99,18 @@
 </script>
 
 
+<style>
+  /* hide the iframes by default */
+  #proyek-html iframe {
+    display: none;
+  }
+
+  /* show the active iframe */
+  #proyek-html iframe.active {
+    display: block;
+  }
+</style>
+
 
 
  
@@ -692,20 +704,20 @@
 
 
              <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-5 col-sm-3">
-            <h4>Laporan Keuangan</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-primary card-tabs">
-              <div class="card-header p-0 pt-1">
-                <ul class="nav nav-tabs" id="custom-tabs-five-tab" role="tablist">
+              <div class="content-wrapper">
+                <div class="container-fluid">
+                  <div class="card card-primary card-outline">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-sm-3">
+                          <h4>Laporan Keuangan</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-md-12">
+                        <div class="card card-primary card-tabs">
+                          <div class="card-header p-0 pt-1">
+                            <ul class="nav nav-tabs" id="custom-tabs-five-tab" role="tablist">
                   <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-five-normal-tab" data-toggle="pill" href="#custom-tabs-five-normal" role="tab" aria-controls="custom-tabs-five-normal" aria-selected="false" onclick="tampilkanProyek('kas')">Kas Tersedia</a>
                   </li>
@@ -783,6 +795,28 @@
                   var proyekHTML = document.getElementById("proyek-html");
                   proyekHTML.style.display = "block";
                 }
+
+                // select all tab links
+                    const tabLinks = document.querySelectorAll('.tab-link');
+
+                  // add click event listener to each tab link
+                  tabLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                      // get the id of the clicked tab link
+                      const id = link.getAttribute('data-tab');
+
+                      // remove the "active" class from all iframes
+                      const iframes = document.querySelectorAll('#proyek-html iframe');
+                      iframes.forEach(iframe => {
+                        iframe.classList.remove('active');
+                      });
+
+                      // add the "active" class to the corresponding iframe
+                      const activeIframe = document.querySelector(`#${id}`);
+                      activeIframe.classList.add('active');
+                    });
+                  });
+
               </script>
     
 
