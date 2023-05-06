@@ -29,6 +29,29 @@
         font-family: 'Nunito', sans-serif;
       }
 
+      table {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      /* CSS untuk membuat tabel menjadi responsif */
+      @media only screen and (max-width: 767px) {
+        /* Membuat setiap sel pada tabel menjadi block */
+        table td {
+          display: block;
+          text-align: center;
+        }
+        
+        /* Membuat tampilan kolom menjadi lebih mudah dibaca */
+        table td:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -42,6 +65,10 @@
               <div class="card-header">
               </div>
               <!-- /.card-header -->
+              <br>
+              <button onclick="selesaiBaca()">Selesai Lihat</button>
+              <br>
+              <br>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered table-hover">
@@ -127,6 +154,11 @@
       </div>
       <!-- /.container-fluid -->
     </section>
+    <script>
+      function selesaiBaca() {
+        window.close();
+      }
+    </script>
     
   </body>
 </html>
