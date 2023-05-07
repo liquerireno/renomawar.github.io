@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -78,6 +79,13 @@
   <script src="reno js/jsreno.js"></script>
 
 
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+
+
+
   <!-- Favicons -->
   <link href="favicon.ico" rel="icon">
   <link href="favicon-32x32.png" rel="icon" sizes="32x32">
@@ -100,6 +108,153 @@
 
 
 <style>
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px) rotate(-5deg); }
+  40% { transform: translateX(5px) rotate(5deg); }
+  60% { transform: translateX(-5px) rotate(-5deg); }
+  80% { transform: translateX(5px) rotate(5deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
+
+.badge {
+  background-color: rgb(207, 30, 30);
+  color: white;
+  font-size: 12px;
+  padding: 3px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.badge.shake {
+  animation: shake 0.8s;
+}
+
+
+<!--contoh animasi untuk mengetik -->
+
+.typing-animation {
+  overflow: hidden;
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+@keyframes typing {
+  0% { width: 0 }
+  30% { width: 0 }
+  40% { width: 100% }
+  70% { width: 100% }
+  80% { width: 100% }
+  100% { width: 100% }
+}
+
+.typing-text.typing::after {
+  content: "";
+}
+
+.typing-text.typing {
+  animation: typing 3s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+}
+
+<!--Tampilan seperti chat -->
+
+.dropdown-item {
+padding: 0.25rem 0.75rem;
+}
+
+.media {
+position: relative;
+margin-bottom: 0.5rem;
+}
+
+.img-circle {
+border-radius: 50%;
+}
+
+.media-body {
+padding: 0.5rem 0.7rem;
+border-radius: 0.25rem;
+background-color: #f7f7f7;
+border: 1px solid #c7c7cc;
+color: #000;
+display: inline-block;
+max-width: 70%;
+position: relative;
+}
+
+.typing-text:before {
+content: "";
+display: inline-block;
+height: 0.5rem;
+width: 0.5rem;
+margin-right: 0.1rem;
+border-radius: 50%;
+background-color: rgb(80, 172, 20);
+border: 0.2rem solid #21b90d;
+-webkit-animation: typing 1.5s infinite;
+animation: typing 1.5s infinite;
+}
+
+.text-sm {
+font-size: 0.9rem;
+margin: 0;
+}
+
+.text-sm:not(:last-child) {
+margin-bottom: 0.25rem;
+}
+
+.float-right {
+float: right;
+}
+
+.text-success {
+color: #28a745;
+}
+
+@-webkit-keyframes typing {
+0% {
+opacity: 0.5;
+}
+50% {
+opacity: 1;
+}
+100% {
+opacity: 0.5;
+}
+}
+
+@keyframes typing {
+0% {
+opacity: 0.5;
+}
+50% {
+opacity: 1;
+}
+100% {
+opacity: 0.5;
+}
+}
+
+
+
+
+
 
 
 </style>
@@ -157,24 +312,11 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fa-regular fa-comments fa-lg"></i>
-          <span class="badge badge-danger navbar-badge">4</span>
+          <span class="badge badge-danger navbar-badge">3</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Bayar Rumah 
-                  <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
-                </h3>
-                <p class="text-sm">Tanggal 15 Dealine Bayar Rumah</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 jam. yang lalu</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
@@ -182,7 +324,7 @@
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Masa Berlaku Kouta Reno
+                  Kouta Reno
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
                 <p class="text-sm">tanggal 02 Juni 2023 masa kouta aktif sudah habis</p>
@@ -198,10 +340,10 @@
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Ganti Oli Motor Vixion & Mio
+                  Ganti Oli 
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
-                <p class="text-sm">tanggal 20 Mei 2023 wajib ganti oli, dan tergantung keadaan</p>
+                <p class="text-sm">Motor Vixion & Mio tgl 20 Mei 2023 wajib ganti oli, dan tergantung keadaan</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 2 jam. yang lalu</p>
               </div>
             </div>
@@ -213,7 +355,7 @@
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Masa Berlaku Kouta Mawar
+                  Kouta Mawar
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
                 <p class="text-sm">tanggal 23 Mei 2023 masa kouta aktif sudah habis</p>
@@ -222,10 +364,99 @@
             </div>
             <!-- Message End -->
           </a>
+
+          
+
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">Semua Pesan</a>
         </div>
+        <script>
+        const commentIcon = document.querySelector('.fa-comments');
+        const commentBadge = document.querySelector('.badge');
+
+        commentIcon.addEventListener('click', function() {
+          commentBadge.textContent = '0';
+          commentBadge.classList.add('shake');
+          setTimeout(function() {
+            commentBadge.classList.remove('shake');
+          }, 800); // menghapus class shake setelah 800ms atau 0.8 detik
+        });
+
+      </script>
+        
       </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fab fa-leanpub fa-lg"></i>
+            <span class="badge badge-danger navbar-badge">1</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+                <div class="typing-animation">
+                    <div class="media">
+                        <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">
+                                Pemberitahuan                                
+                                <span class="float-right text-sm text-success"></span>
+                            </h3>
+                            <p class="text-sm typing-text">Mengetik...   
+                              untuk pembayaran rumah sudah sukses pada tanggal 5 Mei 2023, semangat lagi untuk kita ! <i class="fas fa-check-double"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </li>
+    
+    <script>
+        const typingText = document.querySelectorAll('.typing-text');
+        typingText.forEach(element => {
+            const text = element.innerText;
+            element.innerText = ' ';
+            let current = 0;
+            let maxLength = text.length;
+            let delay = 100;
+            let pause = false;
+    
+            let typeChar = () => {
+                element.innerText += text[current];
+                current++;
+    
+                if (current === maxLength) {
+                    clearInterval(timer);
+                    element.classList.remove('typing');
+                    element.classList.add('typed');
+                    element.innerHTML = element.innerHTML.replace('Mengetik...', '<i class="fas fa-check-double"></i>');
+                    return;
+                }
+    
+                if (pause) {
+                    delay = Math.floor(Math.random() * (500 - 300)) + 300;
+                    setTimeout(() => {
+                        pause = false;
+                        typeChar();
+                    }, delay);
+                    return;
+                }
+    
+                delay = Math.floor(Math.random() * (200 - 50)) + 50;
+                pause = Math.random() < 0.2;
+    
+                setTimeout(typeChar, delay);
+            }
+    
+            let timer = setTimeout(typeChar, delay);
+        }); 
+    </script>
+    
+    
+    
+      
+
+
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -297,17 +528,10 @@
               <i class="fas fa-person-booth"></i>&nbsp;&nbsp;&nbsp;
               <p>
                  Closingan Keuangan
-                <i class="right fas fa-angle-left"></i>
+                
               </p>
             </a>
-            <ul class="nav nav-treeview">
-                 <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="fa-solid fa-link"></i>
-                  <p>Laporan</p>
-                </a>
-              </li>         
-              </ul>
+           
           </li>              
           <li class="nav-item">
             <a href="#" class="nav-link">
