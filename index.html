@@ -131,6 +131,43 @@
   animation: shake 0.8s;
 }
 
+<!--Badge ke 2-->
+.animate__headShake {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: headShake;
+}
+
+.animate__headShake {
+    --animate-duration: 1s;
+    --animate-delay: 0.1s;
+  }
+
+@keyframes headShake {
+  0% {
+    transform: translateX(0);
+  }
+  6.5% {
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+  18.5% {
+    transform: translateX(5px) rotateY(7deg);
+  }
+  31.5% {
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+  43.5% {
+    transform: translateX(2px) rotateY(3deg);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+
+
+<!--Badge ke 2-->
+
 
 <!--contoh animasi untuk mengetik -->
 
@@ -412,44 +449,57 @@ opacity: 0.5;
     </li>
     
     <script>
-        const typingText = document.querySelectorAll('.typing-text');
-        typingText.forEach(element => {
-            const text = element.innerText;
-            element.innerText = ' ';
-            let current = 0;
-            let maxLength = text.length;
-            let delay = 100;
-            let pause = false;
-    
-            let typeChar = () => {
-                element.innerText += text[current];
-                current++;
-    
-                if (current === maxLength) {
-                    clearInterval(timer);
-                    element.classList.remove('typing');
-                    element.classList.add('typed');
-                    element.innerHTML = element.innerHTML.replace('Mengetik...', '<i class="fas fa-check-double"></i>');
-                    return;
-                }
-    
-                if (pause) {
-                    delay = Math.floor(Math.random() * (500 - 300)) + 300;
-                    setTimeout(() => {
-                        pause = false;
-                        typeChar();
-                    }, delay);
-                    return;
-                }
-    
-                delay = Math.floor(Math.random() * (200 - 50)) + 50;
-                pause = Math.random() < 0.2;
-    
-                setTimeout(typeChar, delay);
-            }
-    
-            let timer = setTimeout(typeChar, delay);
-        }); 
+
+const badge = document.querySelector('.navbar-badge');
+badge.addEventListener('click', () => {
+  badge.innerText = '0';
+  badge.classList.add('animate__animated', 'animate__headShake'); // menambahkan class animate.css untuk efek animasi
+  setTimeout(() => {
+    badge.classList.remove('animate__animated', 'animate__headShake'); // menghapus class animate.css setelah efek animasi selesai
+  }, 1000); // mengatur waktu efek animasi selama 1 detik
+});
+
+const typingText = document.querySelectorAll('.typing-text');
+typingText.forEach(element => {
+  const text = element.innerText;
+  element.innerText = ' ';
+  let current = 0;
+  let maxLength = text.length;
+  let delay = 100;
+  let pause = false;
+
+  let typeChar = () => {
+    element.innerText += text[current];
+    current++;
+
+    if (current === maxLength) {
+      clearInterval(timer);
+      element.classList.remove('typing');
+      element.classList.add('typed');
+      element.innerHTML = element.innerHTML.replace('Mengetik...', '<i class="fas fa-check-double"></i>');
+      return;
+    }
+
+    if (pause) {
+      delay = Math.floor(Math.random() * (500 - 300)) + 300;
+      setTimeout(() => {
+        pause = false;
+        typeChar();
+      }, delay);
+      return;
+    }
+
+    delay = Math.floor(Math.random() * (200 - 50)) + 50;
+    pause = Math.random() < 0.2;
+
+    setTimeout(typeChar, delay);
+  }
+
+  let timer = setTimeout(typeChar, delay);
+});
+
+
+
     </script>
     
     
@@ -927,7 +977,7 @@ opacity: 0.5;
                     <div class="card-body">
                       <div class="row">
                         <div class="col-5 col-sm-3">
-                          <h4>Laporan</h4>
+                          <h4>Laporan <i class="fas fa-paperclip"></i></h4>
                         </div>
                       </div>
                       <div class="row">
@@ -996,12 +1046,6 @@ opacity: 0.5;
 
               </script>
     
-
-
-
-
-
-
 
 
               
