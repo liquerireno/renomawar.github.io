@@ -336,14 +336,19 @@ opacity: 0.5;
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
         <script>
-          const myIcon = document.getElementById('myIcon');
-          myIcon.addEventListener('click', () => {
-            myIcon.classList.add('shake');
-            setTimeout(() => {
-              myIcon.classList.remove('shake');
-            }, 800);
+        const myIcon = document.getElementById('myIcon');
+        myIcon.addEventListener('click', () => {
+          myIcon.classList.add('shake');
+          setTimeout(() => {
+            myIcon.classList.remove('shake');
+          }, 800);
+          let audio = new Audio('mp3/notif4.mp3');
+          audio.play();
+          audio.addEventListener('ended', function() {
+            let badge = document.querySelector('.badge');
+            badge.classList.add('show');
           });
-
+        });
         </script>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
@@ -425,7 +430,7 @@ opacity: 0.5;
         </a>
         <script>
          let notificationIcon = document.querySelector('ion-icon[name="notifications-circle-outline"]');
-          let audio = new Audio('mp3/notif.mp3');
+          let audio = new Audio('mp3/notif4.mp3');
           notificationIcon.addEventListener('click', function() {
             audio.play();
             audio.addEventListener('ended', function() {
@@ -454,59 +459,59 @@ opacity: 0.5;
         </div>
     </li>
     
-    <script>
+        <script>
 
-const badge = document.querySelector('.navbar-badge');
-badge.addEventListener('click', () => {
-  badge.innerText = '0';
-  badge.classList.add('animate__animated', 'animate__headShake'); // menambahkan class animate.css untuk efek animasi
-  setTimeout(() => {
-    badge.classList.remove('animate__animated', 'animate__headShake'); // menghapus class animate.css setelah efek animasi selesai
-  }, 1000); // mengatur waktu efek animasi selama 1 detik
-});
-
-const typingText = document.querySelectorAll('.typing-text');
-typingText.forEach(element => {
-  const text = element.innerText;
-  element.innerText = ' ';
-  let current = 0;
-  let maxLength = text.length;
-  let delay = 100;
-  let pause = false;
-
-  let typeChar = () => {
-    element.innerText += text[current];
-    current++;
-
-    if (current === maxLength) {
-      clearInterval(timer);
-      element.classList.remove('typing');
-      element.classList.add('typed');
-      element.innerHTML = element.innerHTML.replace('Mengetik...', '<ion-icon size="small" name="checkmark-done-outline"></ion-icon>');
-      return;
-    }
-
-    if (pause) {
-      delay = Math.floor(Math.random() * (500 - 300)) + 300;
+    const badge = document.querySelector('.navbar-badge');
+    badge.addEventListener('click', () => {
+      badge.innerText = '0';
+      badge.classList.add('animate__animated', 'animate__headShake'); // menambahkan class animate.css untuk efek animasi
       setTimeout(() => {
-        pause = false;
-        typeChar();
-      }, delay);
-      return;
-    }
+        badge.classList.remove('animate__animated', 'animate__headShake'); // menghapus class animate.css setelah efek animasi selesai
+      }, 1000); // mengatur waktu efek animasi selama 1 detik
+    });
 
-    delay = Math.floor(Math.random() * (200 - 50)) + 50;
-    pause = Math.random() < 0.2;
+    const typingText = document.querySelectorAll('.typing-text');
+    typingText.forEach(element => {
+      const text = element.innerText;
+      element.innerText = ' ';
+      let current = 0;
+      let maxLength = text.length;
+      let delay = 100;
+      let pause = false;
 
-    setTimeout(typeChar, delay);
-  }
+      let typeChar = () => {
+        element.innerText += text[current];
+        current++;
 
-  let timer = setTimeout(typeChar, delay);
-});
+        if (current === maxLength) {
+          clearInterval(timer);
+          element.classList.remove('typing');
+          element.classList.add('typed');
+          element.innerHTML = element.innerHTML.replace('Mengetik...', '<ion-icon size="small" name="checkmark-done-outline"></ion-icon>');
+          return;
+        }
+
+        if (pause) {
+          delay = Math.floor(Math.random() * (500 - 300)) + 300;
+          setTimeout(() => {
+            pause = false;
+            typeChar();
+          }, delay);
+          return;
+        }
+
+        delay = Math.floor(Math.random() * (200 - 50)) + 50;
+        pause = Math.random() < 0.2;
+
+        setTimeout(typeChar, delay);
+      }
+
+      let timer = setTimeout(typeChar, delay);
+    });
 
 
 
-    </script>
+        </script>
     
     
     
