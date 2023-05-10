@@ -128,12 +128,20 @@
 <style>
 
 .badge {
-  background-color: rgb(207, 30, 30);
-  color: white;
-  font-size: 12px;
-  padding: 3px;
-  border-radius: 50%;
-  transition: transform 0.3s;
+background-color: rgb(207, 30, 30);
+color: white;
+font-size: 12px;
+padding: 3px;
+border-radius: 50%;
+transition: transform 0.1s;
+position: absolute;
+top: 0;
+right: 0;
+transform-origin: bottom right;
+}
+
+.badge.show {
+transform: scale(1) translate(-50%, 50%);
 }
 
 ion-icon {
@@ -415,6 +423,18 @@ opacity: 0.5;
           <ion-icon name="notifications-circle-outline"></ion-icon>
             <span class="badge badge-danger navbar-badge">1</span>
         </a>
+        <script>
+         let notificationIcon = document.querySelector('ion-icon[name="notifications-circle-outline"]');
+          let audio = new Audio('mp3/notif.mp3');
+          notificationIcon.addEventListener('click', function() {
+            audio.play();
+            audio.addEventListener('ended', function() {
+              let badge = document.querySelector('.badge');
+              badge.classList.add('show');
+            });
+          });
+
+        </script>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <a href="#" class="dropdown-item">
                 <div class="typing-animation">
