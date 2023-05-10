@@ -153,28 +153,6 @@ ion-icon {
   100% { transform: translateX(0) rotate(0); }
 }
 
-<!--end-->
-
-ion-icon {
-  font-size: 26px;
-  transition: transform 0.3s;
-}
-
-ion-icon.clicked {
-  animation: shake 0.8s;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-5px) rotate(-5deg); }
-  40% { transform: translateX(5px) rotate(5deg); }
-  60% { transform: translateX(-5px) rotate(-5deg); }
-  80% { transform: translateX(5px) rotate(5deg); }
-  100% { transform: translateX(0) rotate(0); }
-}
-
-
-<!--toogle-->
 
 
 
@@ -304,6 +282,8 @@ opacity: 0.5;
 
 
 
+
+
 </style>
 
 
@@ -321,20 +301,8 @@ opacity: 0.5;
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><ion-icon id="myIcon" name="toggle-outline"></ion-icon>
-        </a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><ion-icon size="large"name="toggle-outline"></ion-icon></a>
       </li>
-      <script>
-          const myIcon = document.querySelector('#myIcon');
-          myIcon.addEventListener('click', () => {
-            myIcon.classList.add('clicked');
-            setTimeout(() => {
-              myIcon.classList.remove('clicked');
-            }, 800);
-          });
-
-
-      </script>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.html" class="nav-link">Home</a>
       </li>
@@ -342,6 +310,7 @@ opacity: 0.5;
         <a href="#" class="nav-link">Contact</a>
       </li>
     </ul>
+    
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
