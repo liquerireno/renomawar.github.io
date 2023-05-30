@@ -333,7 +333,7 @@ opacity: 0.5;
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <ion-icon id="myIcon" name="chatbox-ellipses-outline"></ion-icon>
-          <span class="badge badge-danger navbar-badge">3</span>
+          <span class="badge badge-danger navbar-badge">0</span>
         </a>
         <script>
         const myIcon = document.getElementById('myIcon');
@@ -363,7 +363,7 @@ opacity: 0.5;
                   Kouta Reno
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
-                <p class="text-sm">tanggal 02 Juni 2023 masa kouta aktif sudah habis</p>
+                <p class="text-sm">Sudah OK</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 1 jam. yang lalu</p>
               </div>
             </div>
@@ -379,7 +379,7 @@ opacity: 0.5;
                   Ganti Oli 
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
-                <p class="text-sm">Motor Vixion & Mio tgl 20 Mei 2023 wajib ganti oli, dan tergantung keadaan</p>
+                <p class="text-sm">SUdah OK</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 2 jam. yang lalu</p>
               </div>
             </div>
@@ -394,7 +394,7 @@ opacity: 0.5;
                   Kouta Mawar
                   <span class="float-right text-sm text-success"><i class="fa-solid fa-check"></i></span>
                 </h3>
-                <p class="text-sm">tanggal 23 Mei 2023 masa kouta aktif sudah habis</p>
+                <p class="text-sm">Sudah OK</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 1 Hari. yang lalu</p>
               </div>
             </div>
@@ -451,7 +451,7 @@ opacity: 0.5;
                                 <span class="float-right text-sm text-success"></span>
                             </h3>
                             <p class="text-sm typing-text">Mengetik...   
-                              untuk pembayaran rumah sudah sukses pada tanggal 5 Mei 2023, semangat lagi untuk kita ! <ion-icon size="small" name="checkmark-done-outline"></ion-icon></p>
+                              Pembayaran Kouta dan Oli sudah oke punya ooo, kamsiah, semangat terus oo untuk kita punya #NonTingkok <ion-icon size="small" name="checkmark-done-outline"></ion-icon></p>
                         </div>
                     </div>
                 </div>
@@ -522,23 +522,23 @@ opacity: 0.5;
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <ion-icon name="barcode-outline"></ion-icon>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <span class="badge badge-warning navbar-badge">0</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifikasi</span>
+          <span class="dropdown-item dropdown-header">0 Notifikasi</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 pesan baru
+            <i class="fas fa-envelope mr-2"></i> 0 pesan baru
             <span class="float-right text-muted text-sm">3 menit</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 permintaan teman
+            <i class="fas fa-users mr-2"></i> 0 permintaan teman
             <span class="float-right text-muted text-sm">12 jam</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 Laporan Baru
+            <i class="fas fa-file mr-2"></i> 0 Laporan Baru
             <span class="float-right text-muted text-sm">2 hari</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -877,79 +877,84 @@ opacity: 0.5;
     
        
             <!-- Tanggal -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
                 Pilih Tanggal
-                  <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal">
-                </h3>       
-                </div>       
+                <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal">
+              </h3>
+            </div>
 
-                <div class="card-header">
-                  
-                       <div class="form-group">
-                      <label for="deskripsi" class="card-title"><i class="fa-sharp fa-solid fa-dog"></i>   Deskripsi Belanja</label>
-                      <br>
-                             <div class="input-group">
-                          <input type="text" id="deskripsi" name="deskripsi" class="form-control">
-                          <div class="input-group-append">
-                            <button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
-                              <i class="fas fa-eraser"></i>
-                              <span class="ml-2 card-title"></span>
-                          </button>
-                          
-                          </div>
-                      </div>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                    <label for="harga" class="card-title"><i class="fa-solid fa-cat"></i>   Harga</label>
-                    <br>
-                    <div class="input-group">
-                      <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
-                      <div class="input-group-append">
-                        <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
-                          <i class="fas fa-eraser"></i>
-                          <span class="ml-2 card-title"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="form-group text-center">
-                    <button type="button" class="btn btn-primary whatsapp-button" onclick="tambah()">
-                      <i class="fa-brands fa-shopify fa-lg"></i>
-                      <span>Tambahkan Belanja</span>
-                    </button>
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
-                      <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim WhatsApp
+            <div class="card-header">
+              <div class="form-group">
+                <label for="deskripsi" class="card-title"><i class="fa-sharp fa-solid fa-dog"></i>   Deskripsi Belanja</label>
+                <br>
+                <div class="input-group">
+                  <input type="text" id="deskripsi" name="deskripsi" class="form-control">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
+                      <i class="fas fa-eraser"></i>
+                      <span class="ml-2 card-title"></span>
                     </button>
                   </div>
-                  <br>
+                </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="harga" class="card-title"><i class="fa-solid fa-cat"></i>   Harga</label>
+                <br>
+                <div class="input-group">
+                  <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
+                      <i class="fas fa-eraser"></i>
+                      <span class="ml-2 card-title"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="form-group text-center">
+                <button type="button" class="btn btn-primary whatsapp-button" onclick="tambah()">
+                  <i class="fa-brands fa-shopify fa-lg"></i>
+                  <span>Tambahkan Belanja</span>
+                </button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
+                  <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim WhatsApp
+                </button>
+                <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimForm()">
+                  <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim Data
+                </button>
+              </div>
+              
+          
+              
+              
 
-                  
-                  <div class="card-body p-0">
-                    <table id="tabel-belanja" class="table table-sm">
-                        <thead>
-                          <tr>
-                            <th scope="col">Tanggal</th>
-                            <th scope="col">Item</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Hapus</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <td colspan="2" class="text-end fw-bold">Total</td>
-                              <td id="total-harga" class="fw-bold">0</td>
-                              <td></td>
-                            </tr>
-                          </tfoot>
-                        </table>
+              <div class="card-body p-0">
+                <table id="tabel-belanja" class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tanggal</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Harga</th>
+                      <th scope="col">Hapus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2" class="text-end fw-bold">Total</td>
+                      <td id="total-harga" class="fw-bold">0</td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <div id="alert-container"></div>
+                
                      
                 </div>
                 </div>
@@ -957,7 +962,98 @@ opacity: 0.5;
                 </div>
                 <!-- End Grid -->
                 <br>
-
+                
+                <script>
+                  var belanja = [];
+                
+                  function tambah() {
+                    var tanggal = document.getElementById('tanggal').value;
+                    var deskripsi = document.getElementById('deskripsi').value;
+                    var harga = document.getElementById('harga').value;
+                
+                    if (deskripsi !== '' && harga !== '') {
+                      belanja.push({
+                        tanggal: tanggal,
+                        deskripsi: deskripsi,
+                        harga: harga
+                      });
+                
+                      var tabelBelanja = document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0];
+                      var row = tabelBelanja.insertRow();
+                      var cellTanggal = row.insertCell(0);
+                      var cellDeskripsi = row.insertCell(1);
+                      var cellHarga = row.insertCell(2);
+                      var cellHapus = row.insertCell(3);
+                
+                      cellTanggal.innerHTML = tanggal;
+                      cellDeskripsi.innerHTML = deskripsi;
+                      cellHarga.innerHTML = harga;
+                      cellHapus.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="hapus(this)">Hapus</button>';
+                
+                      document.getElementById('total-harga').innerText = hitungTotalHarga();
+                
+                      // Reset form
+                      document.getElementById('deskripsi').value = '';
+                      document.getElementById('harga').value = '';
+                    }
+                  }
+                
+                  function hapus(button) {
+                    var row = button.parentNode.parentNode;
+                    var rowIndex = row.rowIndex;
+                
+                    belanja.splice(rowIndex - 1, 1);
+                    document.getElementById('tabel-belanja').deleteRow(rowIndex);
+                
+                    document.getElementById('total-harga').innerText = hitungTotalHarga();
+                  }
+                
+                  function hitungTotalHarga() {
+                    var total = 0;
+                
+                    belanja.forEach(function (item) {
+                      total += parseFloat(item.harga);
+                    });
+                
+                    return total;
+                  }
+                
+                  function kirimForm() {
+                    if (belanja.length === 0) {
+                      alert('Belum ada daftar belanja yang ditambahkan!');
+                      return;
+                    }
+                
+                    var xhr = new XMLHttpRequest();
+                
+                    belanja.forEach(function (item, index) {
+                      var formData = new FormData();
+                      formData.append('tanggal', item.tanggal);
+                      formData.append('deskripsi', item.deskripsi);
+                      formData.append('harga', item.harga);
+                
+                      xhr.open("POST", "https://formspree.io/f/xqkojvea", true);
+                      xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                          console.log("Data " + (index + 1) + " terkirim!");
+                        }
+                      };
+                
+                      xhr.send(formData);
+                    });
+                
+                    // Reset form
+                    document.getElementById("tanggal").value = "";
+                    document.getElementById("deskripsi").value = "";
+                    document.getElementById("harga").value = "";
+                    belanja = [];
+                    document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0].innerHTML = '';
+                    document.getElementById('total-harga').innerText = '0';
+                
+                    alert("Data telah terkirim!");
+                  }
+                </script>
+                
                  <!-- Pencarian Ddaftar belanja -->
                  
                  <section class="content">
