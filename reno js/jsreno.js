@@ -16,8 +16,6 @@ function formatNumber(input) {
   input.setAttribute('pattern', '\\d*');
 }
 
-
-
 function tambah() {
   let tanggal = document.getElementById('tanggal').value;
   let deskripsi = document.getElementById('deskripsi').value;
@@ -38,16 +36,77 @@ function tambah() {
 }
 
 function clearDeskripsi() {
-		document.getElementById("deskripsi").value = "";
-	}
-	
-	function clearHarga() {
-		document.getElementById("harga").value = "";
-	}
+  document.getElementById("deskripsi").value = "";
+}
+
+function clearHarga() {
+  document.getElementById("harga").value = "";
+}
 
 function hapus(index) {
   belanjaan.splice(index, 1);
   tampilkanTabelBelanja();
+}
+
+function kirimForm() {
+if (belanjaan.length === 0) {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    text: 'Belum ada daftar belanja yang ditambahkan!'
+  });
+  return;
+}
+
+var completedRequests = 0; // Menyimpan jumlah permintaan yang selesai
+var totalRequests = belanjaan.length; // Menyimpan jumlah total permintaan
+
+for (var i = 0; i < belanjaan.length; i++) {
+  var item = belanjaan[i];
+  var formData = new FormData();
+  formData.append('tanggal', item.tanggal);
+  formData.append('deskripsi', item.deskripsi);
+  formData.append('harga', item.harga);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://formspree.io/f/xqkojvea", true);
+  xhr.onreadystatechange = function(index) {
+    return function() {
+      if (xhr.readyState === 4) {
+        completedRequests++; // Tandai permintaan selesai
+
+        if (xhr.status === 200) {
+          console.log("Data " + (index + 1) + " terkirim!");
+        } else {
+          console.log("Data " + (index + 1) + " gagal terkirim!");
+        }
+
+        if (completedRequests === totalRequests) {
+          // Semua permintaan selesai
+          console.log("Semua data terkirim!");
+          // Reset form
+          document.getElementById("tanggal").value = "";
+          document.getElementById("deskripsi").value = "";
+          document.getElementById("harga").value = "";
+          belanjaan = [];
+          document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0].innerHTML = '';
+          document.getElementById('total-harga').innerText = '0';
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Data terkirim!',
+            text: 'Data telah berhasil terkirim.',
+            onClose: function() {
+              location.reload(); // Reload halaman setelah menutup notifikasi
+            }
+          });
+        }
+      }
+    };
+  }(i);
+
+  xhr.send(formData);
+}
 }
 
 // Function untuk menampilkan tabel belanjaan
@@ -115,3 +174,16 @@ function kirimWhatsApp() {
 }
 
 feather.replace();
+
+$(document).ready(function(){
+  $('[data-provide="datepicker"]').datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true,
+    todayHighlight: true,
+    clearBtn: true,
+    orientation: "bottom",
+    daysOfWeekHighlighted: "0,6",
+    startDate: "-3d",
+    endDate: "+3m"
+  });
+});
