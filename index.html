@@ -97,7 +97,10 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.0/dist/sweetalert2.min.css">
 
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.0/dist/sweetalert2.min.js"></script>
 
 
   
@@ -563,7 +566,7 @@ opacity: 0.5;
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Liqueri Reno & Mawar</a>
+          <a href="index.html" class="d-block">Liqueri Reno & Mawar</a>
         </div>
       </div>
 
@@ -585,7 +588,7 @@ opacity: 0.5;
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="index.html" class="nav-link active">
               <i class="fas fa-person-booth"></i>&nbsp;&nbsp;&nbsp;
               <p>
                  Closingan Keuangan
@@ -595,14 +598,15 @@ opacity: 0.5;
            
           </li>              
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fa-brands fa-audible"></i>&nbsp;&nbsp;&nbsp;&nbsp;<p>Bacaan Alkitab<span class="right badge badge-danger">Baru</span></p>
+            <a href="alkitab.html" class="nav-link">
+              <i class="fab fa-audible"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              <p>
+                Bacaan Alkitab<span class="right badge badge-danger">Update</span></p>
+              </p>
             </a>
-            <ul class="nav nav-treeview">        
-            </ul>
-          </li>
+          </li>    
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="alkitab.html" class="nav-link">
               <i class="fa-solid fa-photo-film"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <p>
                 Album Foto
@@ -611,7 +615,7 @@ opacity: 0.5;
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="alkitab.html" class="nav-link">
                   <i class="fa-solid fa-bahai fa-2xs"></i>
                   <p>Foto Moment</p>
                 </a>
@@ -700,7 +704,7 @@ opacity: 0.5;
           </li>
           <li class="nav-header">HALAMAN</li>          
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="fa-solid fa-heart-circle-check"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <p>
                 Profil Pernikahan
@@ -923,9 +927,9 @@ opacity: 0.5;
                 <br>
                 <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
                   <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim WhatsApp
-                </button>
+                </button> <i class="fab fa-think-peaks fa-lg"></i>
                 <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimForm()">
-                  <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim Data
+                  <i class="fas fa-file-import fa-lg"></i> Kirim Data
                 </button>
               </div>
               
@@ -962,97 +966,7 @@ opacity: 0.5;
                 </div>
                 <!-- End Grid -->
                 <br>
-                
-                <script>
-                  var belanja = [];
-                
-                  function tambah() {
-                    var tanggal = document.getElementById('tanggal').value;
-                    var deskripsi = document.getElementById('deskripsi').value;
-                    var harga = document.getElementById('harga').value;
-                
-                    if (deskripsi !== '' && harga !== '') {
-                      belanja.push({
-                        tanggal: tanggal,
-                        deskripsi: deskripsi,
-                        harga: harga
-                      });
-                
-                      var tabelBelanja = document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0];
-                      var row = tabelBelanja.insertRow();
-                      var cellTanggal = row.insertCell(0);
-                      var cellDeskripsi = row.insertCell(1);
-                      var cellHarga = row.insertCell(2);
-                      var cellHapus = row.insertCell(3);
-                
-                      cellTanggal.innerHTML = tanggal;
-                      cellDeskripsi.innerHTML = deskripsi;
-                      cellHarga.innerHTML = harga;
-                      cellHapus.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="hapus(this)">Hapus</button>';
-                
-                      document.getElementById('total-harga').innerText = hitungTotalHarga();
-                
-                      // Reset form
-                      document.getElementById('deskripsi').value = '';
-                      document.getElementById('harga').value = '';
-                    }
-                  }
-                
-                  function hapus(button) {
-                    var row = button.parentNode.parentNode;
-                    var rowIndex = row.rowIndex;
-                
-                    belanja.splice(rowIndex - 1, 1);
-                    document.getElementById('tabel-belanja').deleteRow(rowIndex);
-                
-                    document.getElementById('total-harga').innerText = hitungTotalHarga();
-                  }
-                
-                  function hitungTotalHarga() {
-                    var total = 0;
-                
-                    belanja.forEach(function (item) {
-                      total += parseFloat(item.harga);
-                    });
-                
-                    return total;
-                  }
-                
-                  function kirimForm() {
-                    if (belanja.length === 0) {
-                      alert('Belum ada daftar belanja yang ditambahkan!');
-                      return;
-                    }
-                
-                    var xhr = new XMLHttpRequest();
-                
-                    belanja.forEach(function (item, index) {
-                      var formData = new FormData();
-                      formData.append('tanggal', item.tanggal);
-                      formData.append('deskripsi', item.deskripsi);
-                      formData.append('harga', item.harga);
-                
-                      xhr.open("POST", "https://formspree.io/f/xqkojvea", true);
-                      xhr.onreadystatechange = function () {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                          console.log("Data " + (index + 1) + " terkirim!");
-                        }
-                      };
-                
-                      xhr.send(formData);
-                    });
-                
-                    // Reset form
-                    document.getElementById("tanggal").value = "";
-                    document.getElementById("deskripsi").value = "";
-                    document.getElementById("harga").value = "";
-                    belanja = [];
-                    document.getElementById('tabel-belanja').getElementsByTagName('tbody')[0].innerHTML = '';
-                    document.getElementById('total-harga').innerText = '0';
-                
-                    alert("Data telah terkirim!");
-                  }
-                </script>
+               
                 
                  <!-- Pencarian Ddaftar belanja -->
                  
