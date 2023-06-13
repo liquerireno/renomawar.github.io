@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data yang Diinputkan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <style>
+
+:root {
+  --primary-color: linear-gradient(to right, #eff0f1ad, #f0fafaa6);
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+}
+
+.container-md {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.btn-total {
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.form-inline {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  margin-right: 10px;
+}
+
+.btn-footer {
+  margin-right: 10px;
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.table {
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.btn-total {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.btn-total:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 767px) {
+  /* Styles for mobile devices */
+  .container-md {
+    padding: 10px;
+  }
+
+  .form-inline {
+    flex-direction: column;
+  }
+
+  .form-control {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .table td,
+  .table th {
+    padding: 5px;
+  }
+
+  .btn-footer {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    padding: 5px 0;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container-md">
+    <div class="row">
+      <div class="col-md-12">      
+        <h2 class="text-center">Daftar List Belanja Juni 2023</h2>
+      </div>
+      <div class="col-md-12 border rounded p-2">
+        <form class="form-inline justify-content-end mb-3" onsubmit="searchItem(event)">
+            <input type="text" id="search-input" class="form-control mr-sm-2" placeholder="Cari item">
+            <button type="submit" class="btn btn-primary"><i class="fab fa-searchengin"></i></button>
+            <button type="button" class="btn btn-primary" onclick="clearSearchInput()"><i class="fas fa-trash"></i> Text</button>
+            <button type="button" class="btn btn-primary" onclick="reloadPage()"><i class="fas fa-redo-alt"></i> Muat Ulang</button>
+          </form>
+          <div class="col-md-12 text-right">
+            <button class="btn btn-outline-primary btn-total">
+              <strong><i class="fas fa-tags"></i> Total Belanjaan : <span id="total">0</span></strong>
+            </button>
+          </div>                   
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Deskripsi</th>
+                <th>Harga</th>
+              </tr>
+            </thead>
+            <tbody id="data-table">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-12 border rounded p-2">
+        <form class="border rounded p-1">
+            <div class="border rounded p-2">
+                <small id="item-count" style="font-weight: bold;">Total Item: 0</small>
+            </div>
+          </form>                
+          <div class="border rounded p-1 d-flex justify-content-end">
+            <span style="width: 10px;"></span>
+            <button class="btn btn-primary" onclick="downloadExcel()"><i class="fas fa-file-csv"></i> Download Excel</button>
+            <button class="btn btn-primary mr-1" onclick="clearData()"><i class="fas fa-trash"></i> Data</button>
+            <span style="width: 10px;"></span>
+            <button class="btn btn-primary mr-5" onclick="window.location.href='index.html'"><i class="fas fa-vote-yea"></i> Keuangan</button>
+            <span style="width: 10px;"></span>
+            <button class="btn btn-primary" id="prev-button" onclick="prevPage()" disabled><i class="fas fa-arrow-circle-left"></i></button>
+            <span style="width: 1px;"></span>
+            <button class="btn btn-primary" id="next-button" onclick="nextPage()"><i class="fas fa-arrow-circle-right"></i></button>
+            </div>
+          
+          
+                          
+      </div>         
+      <br>      
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>Desain: <a href="mailto:Liquerireno@gmail.com">Liquerireno@gmail.com</a></p>
+  </div>
+  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script>
+    var currentPage = 1; // Menyimpan halaman yang sedang ditampilkan
+    var pageSize = 10; // Menyimpan jumlah entri yang ditampilkan per halaman
+    var data; // Menyimpan data dari localStorage
+
+    function updateItemCount() {
+    var itemCount = data ? data.length : 0;
+    var itemCountElement = document.getElementById("item-count");
+    itemCountElement.textContent = "Jumlah Item: " + itemCount;
+    itemCountElement.style.border = "1px solid #000";
+    itemCountElement.style.padding = "5px";
+    }
+
+
+    function displayData(data) {
+      var totalItems = data.length;
+      var totalPages = Math.ceil(totalItems / pageSize);
+
+      var startIndex = (currentPage - 1) * pageSize; // Menghitung indeks awal data untuk halaman saat ini
+      var endIndex = startIndex + pageSize; // Menghitung indeks akhir data untuk halaman saat ini
+
+      var table = document.getElementById("data-table");
+      table.innerHTML = "";
+
+      for (var i = startIndex; i < endIndex; i++) {
+        if (i >= totalItems) {
+          break;
+        }
+
+        var deskripsi = data[i].deskripsi;
+        var harga = data[i].harga;
+        var tanggal = data[i].tanggal;
+
+        var newRow = table.insertRow(-1);
+
+        var tanggalCell = newRow.insertCell(0);
+        tanggalCell.textContent = formatDate(tanggal);
+
+        var deskripsiCell = newRow.insertCell(1);
+        deskripsiCell.textContent = deskripsi;
+
+        var hargaCell = newRow.insertCell(2);
+        hargaCell.textContent = formatCurrency(harga);
+
+        var totalCell = document.getElementById("total");
+        totalCell.textContent = formatCurrency(calculateTotal());
+      }
+
+      var nextButton = document.getElementById("next-button");
+      nextButton.disabled = currentPage === totalPages;
+
+      var prevButton = document.getElementById("prev-button");
+      prevButton.disabled = currentPage === 1;
+
+      updateItemCount();
+    }
+
+    function searchItem(event) {
+      event.preventDefault();
+
+      var searchInput = document.getElementById("search-input").value.trim().toLowerCase();
+      var filteredData = data.filter(function (item) {
+        return item.deskripsi.toLowerCase().includes(searchInput);
+      });
+
+      if (filteredData.length > 0) {
+        currentPage = 1;
+        displayData(filteredData);
+      } else {
+        Swal.fire({
+          icon: "info",
+          title: "Item tidak ditemukan",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    }
+
+    function formatDate(dateString) {
+      var parts = dateString.split("-");
+      var day = parts[2];
+      var month = parts[1];
+      var year = parts[0];
+
+      return day + "-" + month + "-" + year;
+    }
+
+    function formatCurrency(value) {
+      var formatter = new Intl.NumberFormat("id-ID", { minimumFractionDigits: 0 });
+      return formatter.format(value);
+    }
+
+    function calculateTotal() {
+      if (data) {
+        var total = 0;
+        for (var i = 0; i < data.length; i++) {
+          total += parseInt(data[i].harga);
+        }
+        return total;
+      }
+      return 0;
+    }
+
+    function clearData() {
+      Swal.fire({
+        title: "Masukkan Password",
+        input: "password",
+        showCancelButton: true,
+        confirmButtonText: "Hapus",
+        cancelButtonText: "Batal",
+        inputAttributes: {
+          autocapitalize: "off",
+        },
+        showLoaderOnConfirm: true,
+        preConfirm: (password) => {
+          return new Promise((resolve) => {
+            // Periksa password
+            if (password === "removename") {
+              setTimeout(() => {
+                resolve();
+              }, 1000);
+            } else {
+              Swal.showValidationMessage("Password salah");
+              resolve();
+            }
+          });
+        },
+        allowOutsideClick: () => !Swal.isLoading(),
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.removeItem("data");
+          var table = document.getElementById("data-table");
+          table.innerHTML = "";
+          var totalCell = document.getElementById("total");
+          totalCell.textContent = "0";
+          Swal.fire({
+            icon: "success",
+            title: "Data berhasil dihapus",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+    }
+
+    function nextPage() {
+      currentPage++;
+      displayData(data);
+      updateItemCount();
+    }
+
+    function prevPage() {
+      currentPage--;
+      displayData(data);
+      updateItemCount();
+    }
+
+    window.onload = function () {
+      data = JSON.parse(localStorage.getItem("data")) || [];
+      displayData(data);
+
+      var searchForm = document.getElementById("search-form");
+      searchForm.addEventListener("submit", searchItem);
+    };
+
+    function clearSearchInput() {
+      document.getElementById("search-input").value = "";
+    }
+
+    function reloadPage() {
+      location.reload();
+    }
+
+
+    function downloadExcel() {
+  var rows = [];
+  var headerRow = ["Tanggal", "Deskripsi", "Harga"];
+  rows.push(headerRow);
+
+  var totalHarga = 0;
+
+  for (var i = 0; i < data.length; i++) {
+    var rowData = [];
+    var tanggal = formatDate(data[i].tanggal);
+    var deskripsi = data[i].deskripsi;
+    var harga = parseInt(data[i].harga);
+
+    rowData.push(tanggal, deskripsi, harga);
+    rows.push(rowData);
+
+    totalHarga += harga;
+  }
+
+  var totalRow = ["", "Total", totalHarga];
+  rows.push(totalRow);
+
+  var csvContent = "data:text/csv;charset=utf-8,";
+
+  rows.forEach(function (rowArray) {
+    var row = rowArray.join(",");
+    csvContent += row + "\r\n";
+  });
+
+  var currentDate = new Date();
+  var fileName = "laporankeuangan_" + formatDateForFilename(currentDate) + ".csv";
+  var encodedUri = encodeURI(csvContent);
+  var link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", fileName);
+  document.body.appendChild(link); // Required for FF
+
+  link.click();
+}
+
+function formatDateForFilename(date) {
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  return day + "-" + month + "-" + year;
+}
+
+
+
+
+
+
+  </script>
+
+  
+</body>
+</html>
