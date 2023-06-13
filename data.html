@@ -152,11 +152,11 @@ p {
       <div class="col-md-12 border rounded p-2">
         <form class="form-inline justify-content-end mb-3" onsubmit="searchItem(event)">
             <input type="text" id="search-input" class="form-control mr-sm-2" placeholder="Cari item">
-            <button type="submit" class="btn btn-primary"><i class="fab fa-searchengin"></i></button>
-            <button type="button" class="btn btn-primary" onclick="clearSearchInput()"><i class="fas fa-trash"></i> Text</button>
-            <button type="button" class="btn btn-primary" onclick="reloadPage()"><i class="fas fa-redo-alt"></i> Muat Ulang</button>
+            <button type="submit" class="btn btn-primary"><i class="fab fa-searchengin"></i></button><br>
+            <button type="button" class="btn btn-primary" onclick="clearSearchInput()"><i class="fas fa-trash"></i> Text</button><br>
+            <button type="button" class="btn btn-primary" onclick="reloadPage()"><i class="fas fa-redo-alt"></i> Muat Ulang</button><br>
           </form>
-          <div class="col-md-12 text-right">
+          <div class="col-md-12 text-center">
             <button class="btn btn-outline-primary btn-total">
               <strong><i class="fas fa-tags"></i> Total Belanjaan : <span id="total">0</span></strong>
             </button>
@@ -182,14 +182,10 @@ p {
             </div>
           </form>                
           <div class="border rounded p-1 d-flex justify-content-end">
-            <span style="width: 10px;"></span>
             <button class="btn btn-primary" onclick="downloadExcel()"><i class="fas fa-file-csv"></i> Download Excel</button>
             <button class="btn btn-primary mr-1" onclick="clearData()"><i class="fas fa-trash"></i> Data</button>
-            <span style="width: 10px;"></span>
             <button class="btn btn-primary mr-5" onclick="window.location.href='index.html'"><i class="fas fa-vote-yea"></i> Keuangan</button>
-            <span style="width: 10px;"></span>
             <button class="btn btn-primary" id="prev-button" onclick="prevPage()" disabled><i class="fas fa-arrow-circle-left"></i></button>
-            <span style="width: 1px;"></span>
             <button class="btn btn-primary" id="next-button" onclick="nextPage()"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
           
