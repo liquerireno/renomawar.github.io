@@ -188,12 +188,16 @@ p {
             <small id="item-count" style="font-weight: bold;">Total Item: 0</small>
           </div>
         </form>
-        <div class="border rounded p-1 d-flex justify-content-end">
+        <div class="border rounded">
+          <button class="btn btn-primary" id="prev-button" onclick="prevPage()" disabled><i class="fas fa-arrow-circle-left"></i></button>
+          <button class="btn btn-primary" id="next-button" onclick="nextPage()"><i class="fas fa-arrow-circle-right"></i></button>
+          <br>
+          <br>
           <button class="btn btn-primary" onclick="downloadExcel()"><i class="fas fa-file-csv"></i> Download</button>
           <button class="btn btn-primary mr-1" onclick="clearData()"><i class="fas fa-trash"></i> Data</button>
           <button class="btn btn-primary mr-1" onclick="window.location.href='index.html'"><i class="fas fa-vote-yea"></i> Keuangan</button>
-          <button class="btn btn-primary" id="prev-button" onclick="prevPage()" disabled><i class="fas fa-arrow-circle-left"></i></button>
-          <button class="btn btn-primary" id="next-button" onclick="nextPage()"><i class="fas fa-arrow-circle-right"></i></button>
+   
+          
         </div>
       </div>
       
