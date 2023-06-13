@@ -293,6 +293,53 @@ opacity: 0.5;
 
 
 
+.swal2-container {
+      font-size: 14px;
+      text-align: center;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%);
+    }
+    .swal2-title {
+      font-size: 16px;
+    }
+    .swal2-content {
+      font-size: 14px;
+    }
+
+      /* Style untuk tabel */
+  #data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  #data-table th,
+  #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  #data-table th {
+    background-color: #f2f2f2;
+  }
+
+  /* Style untuk tombol hapus */
+  .hapus {
+    padding: 6px 12px;
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .hapus:hover {
+    background-color: #c82333;
+  }
+
+
 
 
 </style>
@@ -867,95 +914,194 @@ opacity: 0.5;
     
        
             <!-- Tanggal -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">
-                Pilih Tanggal
-                <input type="date" class="form-control p-4" id="tanggal" placeholder="Pilih Tanggal">
-              </h3>
+            <div class="card">
+              <div class="card-header ">
+                  <h3 class="card-outline">
+          <form onsubmit="event.preventDefault(); submitForm();">
+              <div class="card-header">
+                <div class="form-group">
+                  <label for="tanggal" style="font-size: 14px;">Tanggal <i class="fas fa-clock"></i></label>
+                  <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                </div>
+                <div class="form-group">
+                  <label for="deskripsi" style="font-size: 14px;">Deskripsi Belanja <i class="fas fa-shopping-cart"></i></label>
+                  <input type="text" class="form-control" id="deskripsi" name="deskripsi" required>
+                </div>
+                <div class="form-group">
+                  <label for="harga" style="font-size: 14px;">Harga <i class="fas fa-truck-loading"></i></label>
+                  <input type="text" class="form-control" id="harga" name="harga" required onkeyup="this.value = formatCurrency(this.value)">
+                </div>                
+            <div class="form-group text-center" style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="margin-right: 3px;"><i class="fab fa-shopify"></i> Tambah Belanja</button>
+              <button type="button" id="kirim-wa-button" class="btn btn-success" style="margin-left: 3px;"><i class="fab fa-whatsapp"></i> Kirim WhatsApp</button>
             </div>
-
-            <div class="card-header">
-              <div class="form-group">
-                <label for="deskripsi" class="card-title"><i class="fa-sharp fa-solid fa-dog"></i>   Deskripsi Belanja</label>
-                <br>
-                <div class="input-group">
-                  <input type="text" id="deskripsi" name="deskripsi" class="form-control">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-danger btn-sm" onclick="clearDeskripsi()">
-                      <i class="fas fa-eraser"></i>
-                      <span class="ml-2 card-title"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label for="harga" class="card-title"><i class="fa-solid fa-cat"></i>   Harga</label>
-                <br>
-                <div class="input-group">
-                  <input type="text" id="harga" name="harga" onchange="formatNumber(this)" onkeyup="formatNumber(this)" placeholder="0" class="form-control">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-danger btn-sm" onclick="clearHarga()">
-                      <i class="fas fa-eraser"></i>
-                      <span class="ml-2 card-title"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <br>
-              <div class="form-group text-center">
-                <button type="button" class="btn btn-primary whatsapp-button" onclick="tambah()">
-                  <i class="fa-brands fa-shopify fa-lg"></i>
-                  <span>Tambahkan Belanja</span>
-                </button>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimWhatsApp()">
-                  <i class="fa-solid fa-paper-plane fa-lg"></i> Kirim WhatsApp
-                </button>
-                <br>
-                <i class="far fa-arrow-alt-circle-down fa-lg"></i>
-                 <br>
-                <button type="button" class="btn btn-primary whatsapp-button blink-black" onclick="kirimForm()">
-                  <i class="fas fa-file-import fa-lg"></i> Kirim Data
-                </button>
-              </div>
-              
+            </div>           
+          </form>
+          <br>
+          <br>
+          </h3>
           
-              
-              
 
-              <div class="card-body p-0">
-                <table id="tabel-belanja" class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th scope="col">Tanggal</th>
-                      <th scope="col">Item</th>
-                      <th scope="col">Harga</th>
-                      <th scope="col">Hapus</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="2" class="text-end fw-bold">Total</td>
-                      <td id="total-harga" class="fw-bold">0</td>
-                      <td></td>
-                    </tr>
-                  </tfoot>
-                </table>
-                <div id="alert-container"></div>
-                
-                     
-                </div>
-                </div>
-                </div>
-                </div>
-                <!-- End Grid -->
-                <br>
-               
+          
+          <div class="table-responsive card-body p-0">
+            <table id="data-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Tanggal</th>
+                  <th style="text-align: center;">Deskripsi</th>
+                  <th style="text-align: center;">Harga</th>
+                  <th style="text-align: center;"><i class="fas fa-backspace"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        
+          <br>
+          
+          
+          <p style="font-weight: bold; text-align: center; font-size: 1.2em;"><i class="fas fa-money-bill-wave"></i> Total Belanjaan: <span id="total" style="font-size: 1.2em;">0</span></p>
+          <br>
+          <br>    
+          <div class="col-md-12 d-flex justify-content-center mb-3">
+            <button onclick="window.location.href='data.html'" class="btn btn-secondary">Buka List Belanja</button>
+          </div>
+          
+        </div>
+        </div>
+        </div>
+      
+        <script>
+          // Memanggil fungsi displayData saat halaman selesai dimuat
+          window.onload = function() {
+            displayData();
+          };
+      
+          
+          function submitForm() {
+            var tanggal = document.getElementById("tanggal").value;
+            var deskripsi = document.getElementById("deskripsi").value;
+            var harga = document.getElementById("harga").value;
+      
+            // Menghapus tanda ribuan (koma atau titik) dari harga
+            var hargaTanpaTanda = harga.replace(/[.,]/g, '');
+      
+            var data = localStorage.getItem("data");
+            var newData = { tanggal: tanggal, deskripsi: deskripsi, harga: hargaTanpaTanda };
+      
+            if (data) {
+              data = JSON.parse(data);
+              data.push(newData);
+            } else {
+              data = [newData];
+            }
+      
+            localStorage.setItem("data", JSON.stringify(data));
+      
+            var table = document.getElementById("data-table");
+            var newRow = table.insertRow(-1);
+      
+            var tanggalCell = newRow.insertCell(0);
+            tanggalCell.textContent = formatDate(tanggal);
+            tanggalCell.style.textAlign = "center"; // Posisikan teks ke tengah
+      
+            var deskripsiCell = newRow.insertCell(1);
+            deskripsiCell.textContent = deskripsi;
+            deskripsiCell.style.textAlign = "center"; // Posisikan teks ke tengah
+      
+            var hargaCell = newRow.insertCell(2);
+            hargaCell.textContent = formatCurrency(hargaTanpaTanda);
+            hargaCell.style.textAlign = "center"; // Posisikan teks ke tengah
+      
+            var hapusCell = newRow.insertCell(3);
+            var hapusButton = document.createElement("button");
+            hapusButton.className = "hapus";
+            hapusButton.textContent = "Hapus";
+            hapusButton.addEventListener("click", function() {
+              table.deleteRow(newRow.rowIndex);
+              updateTotal();
+            });
+            hapusCell.appendChild(hapusButton);
+            hapusCell.style.textAlign = "center"; // Posisikan teks ke tengah
+      
+            updateTotal();
+      
+            // Menampilkan Swal.fire ketika berhasil ditambahkan
+            Swal.fire({
+              icon: 'success',
+              title: 'Berhasil!',
+              text: 'Belanja telah ditambahkan.',
+              toast: true,
+              position: 'center',
+              showConfirmButton: false,
+              timer: 900,
+              timerProgressBar: true,
+              customClass: {
+                title: 'swal2-tiny',
+                content: 'swal2-tiny',
+              }
+            });
+          }
+      
+          function updateTotal() {
+            var dataRows = document.querySelectorAll("#data-table tr:not(:first-child)");
+            var total = 0;
+            for (var i = 0; i < dataRows.length; i++) {
+              var hargaCell = dataRows[i].querySelector("td:nth-child(3)");
+              var harga = hargaCell.textContent.replace(/[^\d]/g, '');
+              total += parseInt(harga);
+            }
+      
+            var totalCell = document.getElementById("total");
+            totalCell.textContent = formatCurrency(total);
+            totalCell.style.textAlign = "center"; // Posisikan teks ke tengah
+          }
+      
+          function sendWhatsAppMessage() {
+            var dataRows = document.querySelectorAll("#data-table tr:not(:first-child)");
+            var message = "Catatan Belanjaan:\n";
+      
+            for (var i = 0; i < dataRows.length; i++) {
+              var tanggalCell = dataRows[i].querySelector("td:first-child");
+              var deskripsiCell = dataRows[i].querySelector("td:nth-child(2)");
+              var hargaCell = dataRows[i].querySelector("td:nth-child(3)");
+      
+              var tanggal = tanggalCell.textContent;
+              var deskripsi = deskripsiCell.textContent;
+              var harga = parseInt(hargaCell.textContent.replace(/[^\d]/g, ''));
+      
+              var itemNumber = i + 1;
+      
+              message += itemNumber + ". " + tanggal + " - " + deskripsi + " - " + formatCurrency(harga) + "\n";
+            }
+      
+            var phoneNumber = "6285750852290";
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+      
+            window.open(url, "_blank");
+          }
+      
+          document.addEventListener("DOMContentLoaded", function() {
+            var button = document.getElementById("kirim-wa-button");
+            button.addEventListener("click", sendWhatsAppMessage);
+          });
+      
+          function formatCurrency(input) {
+            var value = input.toString().replace(/\D/g, '');
+            return value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+          }
+      
+          function formatDate(dateString) {
+            var parts = dateString.split("-");
+            var day = parts[2];
+            var month = parts[1];
+            var year = parts[0];
+      
+            return `${day}-${month}-${year}`;
+          }
+        </script>
+
                 
                  <!-- Pencarian Ddaftar belanja -->
                  
